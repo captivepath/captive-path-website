@@ -150,18 +150,28 @@ body {
 /* Teal highlight word — accent underline for key words */
 .text-highlight {
   color: var(--color-teal-800);
-  text-decoration: underline;
-  text-decoration-color: var(--color-teal-700);
-  text-underline-offset: 6px;
-  text-decoration-thickness: 3px;
+  font-weight: 600;
+  background-image: linear-gradient(
+    rgba(20, 82, 80, 0.18),
+    rgba(20, 82, 80, 0.18)
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0.18em;
+  background-position: 0px 88%;
+  padding: 0px 0.04em;
 }
 
 .text-highlight-light {
   color: var(--color-teal-400);
-  text-decoration: underline;
-  text-decoration-color: var(--color-teal-600);
-  text-underline-offset: 6px;
-  text-decoration-thickness: 3px;
+  font-weight: 600;
+  background-image: linear-gradient(
+    rgba(59, 176, 172, 0.18),
+    rgba(59, 176, 172, 0.18)
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0.18em;
+  background-position: 0px 88%;
+  padding: 0px 0.04em;
 }
 
 /* Link hover underline */

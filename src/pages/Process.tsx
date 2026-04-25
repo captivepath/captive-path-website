@@ -16,7 +16,7 @@ function ProcessHero() {
         </h1>
         <p className="reveal text-graphite-600 text-lg md:text-xl leading-relaxed max-w-2xl">
           Every engagement starts with clarity. The process is structured to
-          separate signal from noise, pressure-test what matters, and build
+          separate signal from noise, pressure-test what matters and build
           toward outcomes with real leverage.
         </p>
       </div>
@@ -37,9 +37,9 @@ function EngagementModel() {
         </h2>
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14">
           Captive Path works with a small number of ventures at any given time.
-          This is intentional — the goal is meaningful involvement, not portfolio
+          This is intentional... the goal is meaningful involvement, not portfolio
           scale. Each engagement receives direct attention, real strategic
-          thought, and hands-on execution.
+          thought and hands-on execution.
         </p>
 
         <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6">

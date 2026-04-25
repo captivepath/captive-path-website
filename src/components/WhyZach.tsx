@@ -32,18 +32,33 @@ export function WhyZach({ expanded = false }: WhyZachProps) {
 
             <p className="reveal text-stone-300 text-lg leading-relaxed mb-6">
               Captive Path is founded and led by Zach Warshawsky, whose background
-              spans technology, operations, systems, growth, and venture building.
-              The advantage is not just access to tools — it is the ability to
+              spans technology, operations, systems, growth and venture building.
+              The advantage is not just access to tools... it is the ability to
               combine strategic thinking with real execution leverage across modern
               platforms and workflows.
             </p>
 
-            <p className="reveal text-stone-400 text-base leading-relaxed mb-8">
-              Two decades across technology, operations, systems, and growth —
-              applied to what's worth building.
-            </p>
+            <div className="reveal grid grid-cols-3 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden mb-8">
+              <div className="bg-graphite-800 p-5 md:p-6">
+                <span className="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">20+</span>
+                <span className="text-stone-400 text-sm leading-snug">Years across technology &amp; operations</span>
+              </div>
+              <div className="bg-graphite-800 p-5 md:p-6">
+                <span className="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">Multi-domain</span>
+                <span className="text-stone-400 text-sm leading-snug">Systems, growth, venture building</span>
+              </div>
+              <div className="bg-graphite-800 p-5 md:p-6">
+                <span className="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">Operator-led</span>
+                <span className="text-stone-400 text-sm leading-snug">Strategy paired with real execution</span>
+              </div>
+            </div>
 
-            {/* Decorative line motif */}
+            <blockquote className="reveal border-l-2 border-teal-700 pl-5 mb-8">
+              <p className="text-stone-300 text-lg font-display font-medium italic leading-relaxed">
+                "Judgment first. Capability second. Tools third."
+              </p>
+            </blockquote>
+
             <div className="reveal flex items-center gap-3">
               <div className="h-px w-12 bg-teal-700" />
               <span className="text-sm text-teal-400 font-display font-medium tracking-wide">
@@ -56,10 +71,10 @@ export function WhyZach({ expanded = false }: WhyZachProps) {
           {/* Photo */}
           {!expanded && (
             <div className="reveal flex justify-center md:justify-end">
-              <div className="photo-editorial rounded-sm w-72 md:w-80 aspect-[4/5] overflow-hidden">
+              <div className="photo-editorial rounded-sm w-72 md:w-80 aspect-square overflow-hidden">
                 <img
                   src="/images/zach-warshawsky.jpg"
-                  alt="Zach Warshawsky — Founder of Captive Path"
+                  alt="Zach Warshawsky, Founder of Captive Path"
                   className="w-full h-full object-cover object-top grayscale-[20%] contrast-[1.05]"
                   loading="lazy"
                 />

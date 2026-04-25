@@ -6,13 +6,13 @@ const steps = [
     number: '01',
     title: 'Assess',
     description:
-      'Understand the idea, the market, the wedge, and the practical upside.',
+      'Understand the idea, the market, the wedge and the practical upside.',
   },
   {
     number: '02',
     title: 'Refine',
     description:
-      'Clarify the strategy, priorities, constraints, and execution path.',
+      'Clarify the strategy, priorities, constraints and execution path.',
   },
   {
     number: '03',
@@ -36,7 +36,7 @@ export function HowItWorks({ condensed = false }: HowItWorksProps) {
   const ref = useReveal();
 
   return (
-    <section ref={ref} className="py-22 md:py-30">
+    <section ref={ref} className="pt-10 pb-22 md:pt-14 md:pb-30">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <p className="reveal text-xs font-display font-medium tracking-widest uppercase text-teal-800 mb-4">
           How it works
@@ -48,8 +48,8 @@ export function HowItWorks({ condensed = false }: HowItWorksProps) {
 
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14 md:mb-18">
           The process starts with understanding the opportunity, pressure-testing
-          what matters, and identifying where real leverage exists. From there,
-          Captive Path helps define direction, build the right foundation, and
+          what matters and identifying where real leverage exists. From there,
+          Captive Path helps define direction, build the right foundation and
           support the opportunities that justify deeper involvement.
         </p>
 

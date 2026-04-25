@@ -2,17 +2,14 @@ import { useReveal } from '../hooks/useReveal';
 
 const pillars = [
   {
-    number: '01',
     title: 'Independent platform',
     subtitle: 'Owned ventures + selective engagements',
   },
   {
-    number: '02',
     title: 'Selective opportunities',
     subtitle: 'Judgment before capacity',
   },
   {
-    number: '03',
     title: 'Serious execution',
     subtitle: 'Strategy, systems, modern build',
   },
@@ -26,10 +23,7 @@ export function CredibilityStrip() {
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-14 md:py-18">
         <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {pillars.map((pillar) => (
-            <div key={pillar.number} className="reveal">
-              <span className="text-sm font-display font-medium text-teal-800 tracking-wider mb-3 block">
-                {pillar.number}
-              </span>
+            <div key={pillar.title} className="reveal">
               <h3 className="font-display text-xl md:text-2xl font-semibold text-graphite-900 mb-2">
                 {pillar.title}
               </h3>

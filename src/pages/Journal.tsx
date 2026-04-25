@@ -21,7 +21,7 @@ const articles: Article[] = [
     slug: 'systems-over-hustle',
     title: 'Systems over hustle: why infrastructure decides outcomes',
     excerpt:
-      'The ventures that scale reliably are not the ones with the most energy — they are the ones with the best systems. Building repeatable infrastructure early changes everything that follows.',
+      'The ventures that scale reliably are not the ones with the most energy... they are the ones with the best systems. Building repeatable infrastructure early changes everything that follows.',
     date: 'Coming soon',
     category: 'Strategy',
   },
@@ -29,7 +29,7 @@ const articles: Article[] = [
     slug: 'incubation-model',
     title: 'What a modern incubation model actually looks like',
     excerpt:
-      'Traditional incubation is broken. The best opportunities need more than office space and mentorship — they need strategic clarity, technical capability, and real execution support.',
+      'Traditional incubation is broken. The best opportunities need more than office space and mentorship... they need strategic clarity, technical capability and real execution support.',
     date: 'Coming soon',
     category: 'Incubation',
   },
@@ -46,10 +46,10 @@ function JournalHero() {
           Journal
         </p>
         <h1 className="reveal font-display text-4xl sm:text-5xl md:text-6xl text-graphite-900 leading-tight font-bold mb-6 max-w-3xl">
-          Ideas, analysis, and operating <span className="text-highlight">perspective.</span>
+          Ideas, analysis and operating <span className="text-highlight">perspective.</span>
         </h1>
         <p className="reveal text-graphite-600 text-lg md:text-xl leading-relaxed max-w-2xl">
-          Writing on venture evaluation, strategy, incubation, and the work of
+          Writing on venture evaluation, strategy, incubation and the work of
           building things that matter.
         </p>
       </div>

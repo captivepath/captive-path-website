@@ -14,7 +14,7 @@ const audiences = [
   {
     label: 'Businesses',
     description:
-      'Launching new initiatives that require judgment, systems, and modern build capability.',
+      'Launching new initiatives that require judgment, systems and modern build capability.',
   },
 ];
 
@@ -33,7 +33,7 @@ export function WhoItsFor() {
         </h2>
 
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14 md:mb-18">
-          Captive Path is best aligned with founders, operators, and emerging
+          Captive Path is best aligned with founders, operators and emerging
           businesses that have credible potential but need stronger strategy,
           technical leverage, product direction, or execution support to move
           faster and more intelligently.
