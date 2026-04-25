@@ -29,7 +29,7 @@ export function WhoItsFor() {
         </p>
 
         <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight font-bold mb-6">
-          For people with something real to build.
+          For people with something <span className="text-highlight">real</span> to build.
         </h2>
 
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14 md:mb-18">
@@ -43,7 +43,7 @@ export function WhoItsFor() {
           {audiences.map((item) => (
             <div
               key={item.label}
-              className="reveal bg-stone-50 border border-stone-200 rounded-sm p-8 md:p-10 card-lift"
+              className="reveal bg-stone-50 border-2 border-graphite-700 rounded-sm p-8 md:p-10 card-lift"
             >
               <p className="text-xs font-display font-semibold tracking-widest uppercase text-teal-800 mb-4">
                 {item.label}

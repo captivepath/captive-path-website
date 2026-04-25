@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const links = [
+  { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/process', label: 'Process' },
   { to: '/journal', label: 'Journal' },
@@ -12,6 +13,7 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const prevPathname = useRef(location.pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -20,7 +22,10 @@ export function Nav() {
   }, []);
 
   useEffect(() => {
-    setMobileOpen(false);
+    if (prevPathname.current !== location.pathname) {
+      setMobileOpen(false);
+      prevPathname.current = location.pathname;
+    }
   }, [location.pathname]);
 
   return (
@@ -36,7 +41,7 @@ export function Nav() {
           <img
             src="/images/cp-logo.webp"
             alt="Captive Path"
-            className="h-8 md:h-9 w-auto"
+            className="h-10 md:h-12 w-auto"
           />
         </Link>
 

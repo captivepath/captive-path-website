@@ -12,7 +12,7 @@ function ProcessHero() {
           Process
         </p>
         <h1 className="reveal font-display text-4xl sm:text-5xl md:text-6xl text-graphite-900 leading-tight font-bold mb-6 max-w-3xl">
-          How Captive Path works.
+          How Captive Path <span className="text-highlight">works.</span>
         </h1>
         <p className="reveal text-graphite-600 text-lg md:text-xl leading-relaxed max-w-2xl">
           Every engagement starts with clarity. The process is structured to
@@ -33,7 +33,7 @@ function EngagementModel() {
           Engagement model
         </p>
         <h2 className="reveal font-display text-3xl md:text-4xl text-graphite-900 leading-tight font-bold mb-6">
-          Built for depth, not volume.
+          Built for <span className="text-highlight">depth,</span> not volume.
         </h2>
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14">
           Captive Path works with a small number of ventures at any given time.
@@ -59,7 +59,7 @@ function EngagementModel() {
           ].map((item) => (
             <div
               key={item.title}
-              className="reveal bg-stone-50 border border-stone-200 rounded-sm p-8 md:p-10 card-lift"
+              className="reveal bg-stone-50 border-2 border-graphite-700 rounded-sm p-8 md:p-10 card-lift"
             >
               <h3 className="font-display font-semibold text-graphite-900 text-lg mb-3">
                 {item.title}

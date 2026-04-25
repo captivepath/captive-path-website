@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-04-25 (Session 3)
+
+### Added
+- Teal word highlight + underline pattern across all page headlines as a consistent branding device
+- Cloudflare Pages Function for contact form API (`/api/contact`)
+- D1 database migration for contact submissions storage
+- Resend email integration for contact form notifications
+- Wrangler configuration for D1 binding
+
+### Changed
+- Credibility strip redesigned from single block into 3 numbered card sections (01, 02, 03) with supporting text
+- Contact form upgraded from mailto to server-side API (D1 storage + email)
+- Email removed from footer, replaced with Contact link
+- Founder photo re-cropped to better center Zach with less background
+- Logo added to header nav and footer (replacing text)
+- Favicon updated to provided PNG
+- Hero content raised higher for better visibility on smaller devices
+
+### Fixed
+- Nav.tsx lint error: setState called directly in useEffect (now guarded by ref comparison)
+
 ## 2026-04-25 (Session 2)
 
 ### Added
@@ -39,4 +60,4 @@
 ### Decided
 - ADR-001: React + Vite + Tailwind CSS 4 for frontend (static site, fast build, modern CSS)
 - ADR-002: Cloudflare Pages for hosting (aligns with existing infrastructure, preview deploys on PRs)
-- ADR-003: Instrument Serif + Inter font pairing (distinctive display with clean modern body) → Updated to Space Grotesk + Inter
+- ADR-003: Space Grotesk + Inter font pairing (distinctive geometric display with clean modern body)

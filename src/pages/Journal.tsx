@@ -46,7 +46,7 @@ function JournalHero() {
           Journal
         </p>
         <h1 className="reveal font-display text-4xl sm:text-5xl md:text-6xl text-graphite-900 leading-tight font-bold mb-6 max-w-3xl">
-          Ideas, analysis, and operating perspective.
+          Ideas, analysis, and operating <span className="text-highlight">perspective.</span>
         </h1>
         <p className="reveal text-graphite-600 text-lg md:text-xl leading-relaxed max-w-2xl">
           Writing on venture evaluation, strategy, incubation, and the work of

@@ -13,7 +13,7 @@ function AboutHero() {
           About Captive Path
         </p>
         <h1 className="reveal font-display text-4xl sm:text-5xl md:text-6xl text-graphite-900 leading-tight font-bold mb-6 max-w-3xl">
-          An independent venture platform built for serious work.
+          An independent venture platform built for <span className="text-highlight">serious</span> work.
         </h1>
         <p className="reveal text-graphite-600 text-lg md:text-xl leading-relaxed max-w-2xl">
           Captive Path exists to evaluate, shape, and build selected opportunities.
@@ -59,7 +59,7 @@ function FounderSection() {
               Founder
             </p>
             <h2 className="reveal font-display text-3xl md:text-4xl text-stone-50 leading-tight font-bold mb-8">
-              Led by operator judgment.
+              Led by <span className="text-highlight-light">operator judgment.</span>
             </h2>
             <div className="space-y-5">
               <p className="reveal text-stone-300 text-lg leading-relaxed">

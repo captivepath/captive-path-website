@@ -39,7 +39,7 @@ export function WhatWeDo({ condensed = false }: WhatWeDoProps) {
         </p>
 
         <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight font-bold mb-6">
-          Built for more than advice.
+          Built for more than <span className="text-highlight">advice.</span>
         </h2>
 
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14 md:mb-18">
@@ -49,7 +49,7 @@ export function WhatWeDo({ condensed = false }: WhatWeDoProps) {
           momentum behind it.
         </p>
 
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-px bg-stone-200 border border-stone-200 rounded-sm overflow-hidden">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
