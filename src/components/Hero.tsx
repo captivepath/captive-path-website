@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center pt-16 hero-gradient overflow-hidden">
+    <section className="relative min-h-[92vh] flex items-start pt-16 hero-gradient overflow-hidden">
       {/* Topographic pattern */}
       <div className="hero-pattern" />
 
-      <div className="relative max-w-6xl mx-auto px-6 md:px-10 w-full py-20 md:py-30">
+      <div className="relative max-w-6xl mx-auto px-6 md:px-10 w-full pt-12 pb-20 md:pt-16 md:pb-30">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <p className="text-sm font-display font-medium tracking-widest uppercase text-teal-800 mb-6 md:mb-8">

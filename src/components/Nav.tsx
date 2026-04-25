@@ -32,11 +32,12 @@ export function Nav() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-16">
-        <Link
-          to="/"
-          className="font-display text-graphite-900 font-bold tracking-tight text-base"
-        >
-          Captive Path
+        <Link to="/" className="flex items-center">
+          <img
+            src="/images/cp-logo.webp"
+            alt="Captive Path"
+            className="h-8 md:h-9 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}
