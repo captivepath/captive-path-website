@@ -70,7 +70,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
               <div style="background: #F5F0EB; padding: 16px; border-radius: 4px; white-space: pre-wrap;">${escapeHtml(body.message)}</div>
               <hr style="border: none; border-top: 1px solid #E8E0D8; margin: 24px 0;" />
               <p style="color: #6B6B6B; font-size: 12px;">
-                Submitted at ${new Date().toISOString()} from IP ${ip}
+                Submitted at ${new Date().toISOString()} from IP ${escapeHtml(ip)}
               </p>
             </div>
           `,
