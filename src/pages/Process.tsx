@@ -59,7 +59,7 @@ function EngagementModel() {
           ].map((item) => (
             <div
               key={item.title}
-              className="reveal bg-stone-50 border border-stone-200 rounded-sm p-8 md:p-10 card-lift"
+              className="reveal bg-stone-50 border-2 border-graphite-700 rounded-sm p-8 md:p-10 card-lift"
             >
               <h3 className="font-display font-semibold text-graphite-900 text-lg mb-3">
                 {item.title}

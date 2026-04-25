@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const links = [
+  { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/process', label: 'Process' },
   { to: '/journal', label: 'Journal' },
@@ -40,7 +41,7 @@ export function Nav() {
           <img
             src="/images/cp-logo.webp"
             alt="Captive Path"
-            className="h-8 md:h-9 w-auto"
+            className="h-10 md:h-12 w-auto"
           />
         </Link>
 

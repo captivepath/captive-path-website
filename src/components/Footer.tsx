@@ -13,7 +13,7 @@ export function Footer() {
               <img
                 src="/images/cp-logo.webp"
                 alt="Captive Path"
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </Link>
             <p className="mt-3 text-sm text-graphite-500 leading-relaxed max-w-sm">

@@ -8,11 +8,6 @@ export function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-10 w-full pt-12 pb-20 md:pt-16 md:pb-30">
         <div className="max-w-3xl">
-          {/* Eyebrow */}
-          <p className="text-sm font-display font-medium tracking-widest uppercase text-teal-800 mb-6 md:mb-8">
-            Independent venture platform
-          </p>
-
           {/* Headline */}
           <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-graphite-900 leading-[1.05] font-bold tracking-tight mb-8 md:mb-10">
             A venture platform for what's <span className="text-highlight">worth</span> building.

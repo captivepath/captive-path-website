@@ -43,7 +43,7 @@ export function WhoItsFor() {
           {audiences.map((item) => (
             <div
               key={item.label}
-              className="reveal bg-stone-50 border border-stone-200 rounded-sm p-8 md:p-10 card-lift"
+              className="reveal bg-stone-50 border-2 border-graphite-700 rounded-sm p-8 md:p-10 card-lift"
             >
               <p className="text-xs font-display font-semibold tracking-widest uppercase text-teal-800 mb-4">
                 {item.label}

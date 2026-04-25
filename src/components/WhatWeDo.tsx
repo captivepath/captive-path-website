@@ -49,7 +49,7 @@ export function WhatWeDo({ condensed = false }: WhatWeDoProps) {
           momentum behind it.
         </p>
 
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-px bg-stone-200 border border-stone-200 rounded-sm overflow-hidden">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
