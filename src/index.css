@@ -150,7 +150,7 @@ body {
 /* Teal highlight word — accent underline for key words */
 .text-highlight {
   color: var(--color-teal-800);
-  font-weight: 600;
+  font-weight: inherit;
   background-image: linear-gradient(
     rgba(20, 82, 80, 0.18),
     rgba(20, 82, 80, 0.18)
@@ -163,7 +163,7 @@ body {
 
 .text-highlight-light {
   color: var(--color-teal-400);
-  font-weight: 600;
+  font-weight: inherit;
   background-image: linear-gradient(
     rgba(59, 176, 172, 0.18),
     rgba(59, 176, 172, 0.18)
