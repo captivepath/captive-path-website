@@ -12,36 +12,30 @@ Establish the design system, build the full homepage with all 8 sections, set up
 ### Status: In Progress
 
 ### Last Session (2026-04-25)
-- Typography updated to Space Grotesk (display) + Inter (body) per founder direction
-- Design enhancements: hero gradient + topographic pattern, section depth transitions, card hover lifts, brand-line device, photo editorial treatment
-- Founder photo integrated into Why Zach section (2-column grid with editorial photo treatment)
-- Multi-page restructure: Home, About, Process, Journal, Contact (React Router)
-- Journal page built with article listing, category filters, placeholder articles
-- Contact page with form (mailto-based), sidebar info cards
-- About page with expanded founder section (full photo + extended bio)
-- Process page with engagement model section
-- Footer expanded with navigation columns
-- Nav updated with page links + mobile hamburger menu
-- SPA routing with Cloudflare Pages _redirects file
+- Logo and favicon integrated (header, footer, browser tab)
+- Teal word highlight pattern applied across all page headlines (consistent branding device)
+- Credibility strip redesigned into 3 numbered card sections with supporting text
+- Contact form upgraded from mailto to API-based (Cloudflare Pages Function + D1 storage + Resend email)
+- Email removed from footer, replaced with Contact link
+- Founder photo re-cropped for better centering
+- Hero content raised for better mobile visibility
+- Nav lint error fixed (setState in effect)
 
-### Previous Session
-- Repository created at https://github.com/captivepath/captive-path-website
-- `/docs` structure initialized per playbook
-- Design system established
-- Full homepage built with all 8 required sections
-- GitHub Actions CI/CD pipeline configured for Cloudflare Pages
-- Cloudflare Pages project created and deployed (`captive-path-website.pages.dev`)
+### Previous Sessions
+- Session 2: Typography to Space Grotesk + Inter, design enhancements, multi-page architecture, founder photo, journal page
+- Session 1: Repository created, design system, full homepage, CI/CD pipeline, Cloudflare Pages deployment
 
 ### Currently In Progress
-- PR review and merge for design polish + multi-page update
+- Contact form backend requires setup: D1 database creation, Resend API key, wrangler.toml database_id
 
 ### Blockers
-None
+- D1 database needs to be created via `npx wrangler d1 create captive-path-contacts`
+- Resend API key needed for email notifications (form submissions still saved to D1 without it)
 
 ### Deployment
 - **Target:** `captive-path-website.pages.dev`
 - **CI/CD:** GitHub Actions → Cloudflare Pages (on push to main + PR preview deploys)
-- **Status:** Production live with initial homepage; awaiting merge for multi-page update
+- **Status:** Production live with multi-page site; logo/favicon deployed
 
 ### Last Updated
 2026-04-25
