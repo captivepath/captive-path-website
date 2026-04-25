@@ -50,32 +50,41 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const contactEmail = context.env.CONTACT_EMAIL || 'zach@captivepath.com';
 
     if (context.env.RESEND_API_KEY) {
-      await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${context.env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: 'Captive Path <contact@captivepath.com>',
-          to: [contactEmail],
-          reply_to: body.email,
-          subject: `Captive Path inquiry from ${body.name}`,
-          html: `
-            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px;">
-              <h2 style="color: #1E1E1E; margin-bottom: 20px;">New Contact Form Submission</h2>
-              <p><strong>Name:</strong> ${escapeHtml(body.name)}</p>
-              <p><strong>Email:</strong> <a href="mailto:${escapeHtml(body.email)}">${escapeHtml(body.email)}</a></p>
-              <p><strong>Message:</strong></p>
-              <div style="background: #F5F0EB; padding: 16px; border-radius: 4px; white-space: pre-wrap;">${escapeHtml(body.message)}</div>
-              <hr style="border: none; border-top: 1px solid #E8E0D8; margin: 24px 0;" />
-              <p style="color: #6B6B6B; font-size: 12px;">
-                Submitted at ${new Date().toISOString()} from IP ${escapeHtml(ip)}
-              </p>
-            </div>
-          `,
-        }),
-      });
+      try {
+        const emailRes = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${context.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: 'Captive Path <contact@captivepath.com>',
+            to: [contactEmail],
+            reply_to: body.email,
+            subject: `Captive Path inquiry from ${body.name}`,
+            html: `
+              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px;">
+                <h2 style="color: #1E1E1E; margin-bottom: 20px;">New Contact Form Submission</h2>
+                <p><strong>Name:</strong> ${escapeHtml(body.name)}</p>
+                <p><strong>Email:</strong> <a href="mailto:${escapeHtml(body.email)}">${escapeHtml(body.email)}</a></p>
+                <p><strong>Message:</strong></p>
+                <div style="background: #F5F0EB; padding: 16px; border-radius: 4px; white-space: pre-wrap;">${escapeHtml(body.message)}</div>
+                <hr style="border: none; border-top: 1px solid #E8E0D8; margin: 24px 0;" />
+                <p style="color: #6B6B6B; font-size: 12px;">
+                  Submitted at ${new Date().toISOString()} from IP ${escapeHtml(ip)}
+                </p>
+              </div>
+            `,
+          }),
+        });
+
+        if (!emailRes.ok) {
+          const errorBody = await emailRes.text();
+          console.error(`Resend email failed (${emailRes.status}): ${errorBody}`);
+        }
+      } catch (emailErr) {
+        console.error('Resend email error:', emailErr);
+      }
     }
 
     return new Response(
