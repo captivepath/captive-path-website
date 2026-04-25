@@ -12,19 +12,16 @@ export function FocusAreas() {
   const ref = useReveal();
 
   return (
-    <section ref={ref} className="py-22 md:py-30 border-b border-stone-200">
+    <section ref={ref} className="py-22 md:py-30 section-fade-out border-b border-stone-200">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
-        {/* Section label */}
-        <p className="reveal text-xs font-medium tracking-widest uppercase text-teal-800 mb-4">
+        <p className="reveal text-xs font-display font-medium tracking-widest uppercase text-teal-800 mb-4">
           Focus areas
         </p>
 
-        {/* Heading */}
-        <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight mb-14 md:mb-18">
+        <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight font-bold mb-14 md:mb-18">
           Where Captive Path creates the most leverage.
         </h2>
 
-        {/* Focus list — editorial treatment */}
         <div className="reveal-stagger">
           {focuses.map((item, i) => (
             <div

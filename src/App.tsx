@@ -1,27 +1,26 @@
+import { Routes, Route } from 'react-router-dom';
 import { Nav } from './components/Nav';
-import { Hero } from './components/Hero';
-import { CredibilityStrip } from './components/CredibilityStrip';
-import { WhatWeDo } from './components/WhatWeDo';
-import { WhoItsFor } from './components/WhoItsFor';
-import { HowItWorks } from './components/HowItWorks';
-import { WhyZach } from './components/WhyZach';
-import { FocusAreas } from './components/FocusAreas';
-import { ClosingCTA } from './components/ClosingCTA';
 import { Footer } from './components/Footer';
+import { Home } from './pages/Home';
+import { About } from './pages/About';
+import { Process } from './pages/Process';
+import { Journal } from './pages/Journal';
+import { Contact } from './pages/Contact';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <Nav />
       <main>
-        <Hero />
-        <CredibilityStrip />
-        <WhatWeDo />
-        <WhoItsFor />
-        <HowItWorks />
-        <WhyZach />
-        <FocusAreas />
-        <ClosingCTA />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/process" element={<Process />} />
+          <Route path="/journal" element={<Journal />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
       <Footer />
     </>
