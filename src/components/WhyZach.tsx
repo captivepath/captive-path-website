@@ -27,7 +27,7 @@ export function WhyZach({ expanded = false }: WhyZachProps) {
             </p>
 
             <h2 className="reveal font-display text-4xl md:text-5xl text-stone-50 leading-tight font-bold mb-8">
-              Led by operator judgment.
+              Led by <span className="text-highlight-light">operator judgment.</span>
             </h2>
 
             <p className="reveal text-stone-300 text-lg leading-relaxed mb-6">

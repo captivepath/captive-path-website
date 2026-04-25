@@ -39,7 +39,7 @@ export function WhatWeDo({ condensed = false }: WhatWeDoProps) {
         </p>
 
         <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight font-bold mb-6">
-          Built for more than advice.
+          Built for more than <span className="text-highlight">advice.</span>
         </h2>
 
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14 md:mb-18">

@@ -15,7 +15,7 @@ export function Hero() {
 
           {/* Headline */}
           <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-graphite-900 leading-[1.05] font-bold tracking-tight mb-8 md:mb-10">
-            A venture platform for what's worth building.
+            A venture platform for what's <span className="text-highlight">worth</span> building.
           </h1>
 
           {/* Subhead */}

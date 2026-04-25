@@ -29,7 +29,7 @@ export function WhoItsFor() {
         </p>
 
         <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight font-bold mb-6">
-          For people with something real to build.
+          For people with something <span className="text-highlight">real</span> to build.
         </h2>
 
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14 md:mb-18">

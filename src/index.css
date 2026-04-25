@@ -147,6 +147,23 @@ body {
   pointer-events: none;
 }
 
+/* Teal highlight word — accent underline for key words */
+.text-highlight {
+  color: var(--color-teal-800);
+  text-decoration: underline;
+  text-decoration-color: var(--color-teal-700);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+
+.text-highlight-light {
+  color: var(--color-teal-400);
+  text-decoration: underline;
+  text-decoration-color: var(--color-teal-600);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+
 /* Link hover underline */
 .link-underline {
   position: relative;

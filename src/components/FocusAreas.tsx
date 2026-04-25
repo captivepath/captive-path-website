@@ -19,7 +19,7 @@ export function FocusAreas() {
         </p>
 
         <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight font-bold mb-14 md:mb-18">
-          Where Captive Path creates the most leverage.
+          Where Captive Path creates the most <span className="text-highlight">leverage.</span>
         </h2>
 
         <div className="reveal-stagger">

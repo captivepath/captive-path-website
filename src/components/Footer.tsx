@@ -41,9 +41,9 @@ export function Footer() {
               Connect
             </p>
             <div className="flex flex-col gap-2.5">
-              <a href="mailto:zach@captivepath.com" className="text-sm text-graphite-600 hover:text-graphite-900 transition-colors">
-                zach@captivepath.com
-              </a>
+              <Link to="/contact" className="text-sm text-graphite-600 hover:text-graphite-900 transition-colors">
+                Start a conversation
+              </Link>
             </div>
           </div>
         </div>

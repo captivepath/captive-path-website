@@ -9,7 +9,7 @@ export function ClosingCTA() {
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="max-w-2xl">
           <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight font-bold mb-6">
-            If it's worth building, it's worth evaluating seriously.
+            If it's <span className="text-highlight">worth</span> building, it's worth evaluating <span className="text-highlight">seriously.</span>
           </h2>
 
           <p className="reveal text-graphite-600 text-lg leading-relaxed mb-10 md:mb-14">

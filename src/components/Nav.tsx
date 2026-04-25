@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const links = [
@@ -12,6 +12,7 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const prevPathname = useRef(location.pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -20,7 +21,10 @@ export function Nav() {
   }, []);
 
   useEffect(() => {
-    setMobileOpen(false);
+    if (prevPathname.current !== location.pathname) {
+      setMobileOpen(false);
+      prevPathname.current = location.pathname;
+    }
   }, [location.pathname]);
 
   return (
