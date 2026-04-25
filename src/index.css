@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color palette — warm mineral neutrals */
+  --color-stone-50: #FAF8F5;
+  --color-stone-100: #F5F0EB;
+  --color-stone-200: #E8E0D8;
+  --color-stone-300: #D4C9BD;
+  --color-stone-400: #B8A99A;
+
+  /* Text colors — deep graphite */
+  --color-graphite-900: #1E1E1E;
+  --color-graphite-800: #2A2A2A;
+  --color-graphite-700: #3D3D3D;
+  --color-graphite-600: #525252;
+  --color-graphite-500: #6B6B6B;
+  --color-graphite-400: #8A8A8A;
+  --color-graphite-300: #ADADAD;
+
+  /* Accent — deep teal */
+  --color-teal-900: #0F3D3B;
+  --color-teal-800: #145250;
+  --color-teal-700: #1A6B68;
+  --color-teal-600: #1F7F7C;
+  --color-teal-500: #259490;
+  --color-teal-400: #3BB0AC;
+
+  /* Typography */
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing scale */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-34: 8.5rem;
+  --spacing-38: 9.5rem;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-stone-50);
+  color: var(--color-graphite-800);
+  line-height: 1.6;
+}
+
+/* Scroll reveal animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 400ms; }
+
+/* Selection color */
+::selection {
+  background-color: var(--color-teal-800);
+  color: var(--color-stone-50);
+}
