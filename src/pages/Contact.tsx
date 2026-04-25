@@ -35,7 +35,7 @@ function ContactForm() {
                 const name = (form.elements.namedItem('name') as HTMLInputElement).value;
                 const email = (form.elements.namedItem('email') as HTMLInputElement).value;
                 const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
-                window.location.href = `mailto:zach@captivepath.com?subject=Captive Path inquiry from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${name} (${email})`;
+                window.location.href = `mailto:zach@captivepath.com?subject=${encodeURIComponent(`Captive Path inquiry from ${name}`)}&body=${encodeURIComponent(`${message}\n\nFrom: ${name} (${email})`)}`;
               }}
               className="space-y-6"
             >
