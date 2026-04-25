@@ -69,7 +69,7 @@ function FounderSection() {
                 combine strategic thinking with real execution leverage across modern
                 platforms and workflows.
               </p>
-              <div className="reveal grid grid-cols-3 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
+              <div className="reveal grid grid-cols-1 md:grid-cols-3 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
                 <div className="bg-graphite-800 p-5 md:p-6">
                   <span className="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">20+</span>
                   <span className="text-stone-400 text-sm leading-snug">Years across technology &amp; operations</span>
