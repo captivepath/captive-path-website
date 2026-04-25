@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useReveal } from '../hooks/useReveal';
 
 const steps = [
@@ -27,23 +28,24 @@ const steps = [
   },
 ];
 
-export function HowItWorks() {
+interface HowItWorksProps {
+  condensed?: boolean;
+}
+
+export function HowItWorks({ condensed = false }: HowItWorksProps) {
   const ref = useReveal();
 
   return (
-    <section ref={ref} id="how" className="py-22 md:py-30">
+    <section ref={ref} className="py-22 md:py-30">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
-        {/* Section label */}
-        <p className="reveal text-xs font-medium tracking-widest uppercase text-teal-800 mb-4">
+        <p className="reveal text-xs font-display font-medium tracking-widest uppercase text-teal-800 mb-4">
           How it works
         </p>
 
-        {/* Heading */}
-        <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight mb-6">
+        <h2 className="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight font-bold mb-6">
           Clarity first. Then momentum.
         </h2>
 
-        {/* Body */}
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14 md:mb-18">
           The process starts with understanding the opportunity, pressure-testing
           what matters, and identifying where real leverage exists. From there,
@@ -51,7 +53,6 @@ export function HowItWorks() {
           support the opportunities that justify deeper involvement.
         </p>
 
-        {/* Steps — editorial list with line separators */}
         <div className="reveal-stagger">
           {steps.map((step, i) => (
             <div
@@ -60,11 +61,11 @@ export function HowItWorks() {
                 i < steps.length - 1 ? 'border-b border-stone-200' : ''
               } ${i === 0 ? 'border-t border-stone-200' : ''}`}
             >
-              <span className="text-sm font-medium text-teal-800 tracking-wider md:w-16 shrink-0">
+              <span className="text-sm font-display font-medium text-teal-800 tracking-wider md:w-16 shrink-0">
                 {step.number}
               </span>
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-graphite-900 mb-2">
+                <h3 className="text-xl font-display font-semibold text-graphite-900 mb-2">
                   {step.title}
                 </h3>
                 <p className="text-graphite-500 text-base leading-relaxed max-w-lg">
@@ -74,6 +75,17 @@ export function HowItWorks() {
             </div>
           ))}
         </div>
+
+        {condensed && (
+          <div className="reveal mt-10">
+            <Link
+              to="/process"
+              className="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline"
+            >
+              Explore the full process →
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -11,8 +11,8 @@ Modern editorial systems design with restrained character.
 - **Muted:** Lighter graphite for secondary text
 
 ## Typography
-- **Display:** Instrument Serif — hero headline and selective section headings
-- **Body:** Satoshi or General Sans — body copy, navigation, UI elements
+- **Display:** Space Grotesk — hero headline and selective section headings
+- **Body:** Inter — body copy, navigation, UI elements
 - **Scale:** Based on 4px grid
 
 ## Spacing
