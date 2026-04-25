@@ -16,7 +16,7 @@ function AboutHero() {
           An independent venture platform built for <span className="text-highlight">serious</span> work.
         </h1>
         <p className="reveal text-graphite-600 text-lg md:text-xl leading-relaxed max-w-2xl">
-          Captive Path exists to evaluate, shape, and build selected opportunities.
+          Captive Path exists to evaluate, shape and build selected opportunities.
           It is not a consulting firm, an agency, or an accelerator. It is a focused
           platform for the work that sits between vision and execution.
         </p>
@@ -41,7 +41,7 @@ function FounderSection() {
             <div className="photo-editorial rounded-sm overflow-hidden">
               <img
                 src="/images/zach-warshawsky.jpg"
-                alt="Zach Warshawsky — Founder of Captive Path"
+                alt="Zach Warshawsky, Founder of Captive Path"
                 className="w-full h-auto object-cover grayscale-[20%] contrast-[1.05]"
               />
             </div>
@@ -64,22 +64,30 @@ function FounderSection() {
             <div className="space-y-5">
               <p className="reveal text-stone-300 text-lg leading-relaxed">
                 Captive Path is founded and led by Zach Warshawsky, whose background
-                spans technology, operations, systems, growth, and venture building.
-                The advantage is not just access to tools — it is the ability to
+                spans technology, operations, systems, growth and venture building.
+                The advantage is not just access to tools... it is the ability to
                 combine strategic thinking with real execution leverage across modern
                 platforms and workflows.
               </p>
-              <p className="reveal text-stone-400 text-base leading-relaxed">
-                Two decades across technology, operations, systems, and growth —
-                applied to what's worth building. The work behind Captive Path is
-                rooted in direct experience building products, leading teams,
-                navigating complex decisions, and understanding what it takes
-                to move from opportunity to outcome.
-              </p>
-              <p className="reveal text-stone-400 text-base leading-relaxed">
-                This is not outsourced judgment. It is earned perspective applied
-                to opportunities that deserve more than surface-level effort.
-              </p>
+              <div className="reveal grid grid-cols-3 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
+                <div className="bg-graphite-800 p-5 md:p-6">
+                  <span className="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">20+</span>
+                  <span className="text-stone-400 text-sm leading-snug">Years across technology &amp; operations</span>
+                </div>
+                <div className="bg-graphite-800 p-5 md:p-6">
+                  <span className="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">Multi-domain</span>
+                  <span className="text-stone-400 text-sm leading-snug">Systems, growth, venture building</span>
+                </div>
+                <div className="bg-graphite-800 p-5 md:p-6">
+                  <span className="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">Operator-led</span>
+                  <span className="text-stone-400 text-sm leading-snug">Strategy paired with real execution</span>
+                </div>
+              </div>
+              <blockquote className="reveal border-l-2 border-teal-700 pl-5">
+                <p className="text-stone-300 text-lg font-display font-medium italic leading-relaxed">
+                  "Judgment first. Capability second. Tools third."
+                </p>
+              </blockquote>
             </div>
           </div>
         </div>

@@ -15,8 +15,8 @@ export function Hero() {
 
           {/* Subhead */}
           <p className="text-lg md:text-xl text-graphite-600 leading-relaxed max-w-2xl mb-10 md:mb-14">
-            Captive Path builds, backs, and helps shape selected ventures
-            through strategy, systems, and modern technical execution.
+            Captive Path builds, backs and helps shape selected ventures
+            through strategy, systems and modern technical execution.
           </p>
 
           {/* CTAs */}

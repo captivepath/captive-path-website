@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-04-25 (Session 4)
+
+### Changed
+- Highlight CSS: switched from text-decoration underline to background-image gradient (18% opacity, 0.18em line at 88% position)
+- WhatWeDo grid: thicker inner dividers (gap-0.5), lighter hover overlay (30% opacity), added numbered items (01-04)
+- CredibilityStrip: removed numbers, kept titles + subtitles only
+- Founder section: replaced bio paragraph with 3 stat boxes (20+, Multi-domain, Operator-led) + blockquote quote
+- Founder photo: re-cropped to square for tighter head-and-shoulders framing
+- Footer description expanded to full positioning statement
+- HowItWorks: reduced top padding to tighten spacing after WhatWeDo section
+- Replaced all em dashes with ellipses site-wide
+- Removed all Oxford commas site-wide
+
 ## 2026-04-25 (Session 3)
 
 ### Added

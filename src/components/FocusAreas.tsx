@@ -4,8 +4,8 @@ const focuses = [
   'Venture shaping and opportunity evaluation',
   'Product and execution strategy',
   'Systems and operating infrastructure',
-  'AI-assisted research, planning, and build acceleration — used as leverage, not hype',
-  'Selective venture support, incubation, or partnership',
+  'AI-assisted research, planning and build acceleration... used as leverage, not hype',
+  'Selective venture support, incubation or partnership',
 ];
 
 export function FocusAreas() {

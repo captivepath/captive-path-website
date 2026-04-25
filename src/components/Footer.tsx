@@ -17,8 +17,9 @@ export function Footer() {
               />
             </Link>
             <p className="mt-3 text-sm text-graphite-500 leading-relaxed max-w-sm">
-              An independent venture platform led by Zach Warshawsky. Built for
-              what's worth building.
+              An independent venture platform led by Zach Warshawsky. Built to
+              shape, support and advance selected opportunities through strategy,
+              systems and modern execution.
             </p>
           </div>
 

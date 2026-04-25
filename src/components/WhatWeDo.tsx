@@ -3,24 +3,28 @@ import { useReveal } from '../hooks/useReveal';
 
 const pillars = [
   {
+    number: '01',
     title: 'Evaluate the opportunity',
     description:
-      'Pressure-test ideas, markets, wedges, and viability before overcommitting.',
+      'Pressure-test ideas, markets, wedges and viability before overcommitting.',
   },
   {
+    number: '02',
     title: 'Shape the strategy',
     description:
-      'Clarify positioning, business design, operating structure, and next moves.',
+      'Clarify positioning, business design, operating structure and next moves.',
   },
   {
+    number: '03',
     title: 'Build the foundation',
     description:
-      'Create products, systems, workflows, or infrastructure that move the venture forward.',
+      'Create products, systems, workflows or infrastructure that move the venture forward.',
   },
   {
+    number: '04',
     title: 'Support what scales',
     description:
-      'Stay involved where there is real alignment, upside, and leverage.',
+      'Stay involved where there is real alignment, upside and leverage.',
   },
 ];
 
@@ -45,16 +49,19 @@ export function WhatWeDo({ condensed = false }: WhatWeDoProps) {
         <p className="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14 md:mb-18">
           Captive Path works on opportunities that need more than outsourced labor
           or broad consulting. The focus is on evaluating what matters, structuring
-          the right path forward, and helping build the systems, product, and
+          the right path forward and helping build the systems, product and
           momentum behind it.
         </p>
 
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-0.5 bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
           {pillars.map((pillar) => (
             <div
-              key={pillar.title}
-              className="reveal bg-stone-50 p-8 md:p-10 hover:bg-stone-100/60 transition-colors duration-300"
+              key={pillar.number}
+              className="reveal bg-stone-50 p-8 md:p-10 hover:bg-stone-100/30 transition-colors duration-300"
             >
+              <span className="text-sm font-display font-medium text-teal-800 tracking-wider mb-3 block">
+                {pillar.number}
+              </span>
               <h3 className="text-lg font-display font-semibold text-graphite-900 mb-3">
                 {pillar.title}
               </h3>
