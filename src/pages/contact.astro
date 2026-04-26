@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.tsx';
+---
+
+<Layout title="Contact — Captive Path" description="Start a conversation with Captive Path. Share your opportunity and get a direct response within 1-2 business days.">
+  <!-- Hero -->
+  <section class="pt-32 pb-20 md:pt-40 md:pb-26 section-fade-in">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <p class="reveal text-xs font-display font-medium tracking-widest uppercase text-teal-800 mb-4">
+        Contact
+      </p>
+      <h1 class="reveal font-display text-4xl sm:text-5xl md:text-6xl text-graphite-900 leading-tight font-bold mb-6 max-w-3xl">
+        Start a <span class="text-highlight">conversation.</span>
+      </h1>
+      <p class="reveal text-graphite-600 text-lg md:text-xl leading-relaxed max-w-2xl">
+        If you have an opportunity worth exploring, Captive Path is built for
+        the conversation that helps determine what it deserves next.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="pb-22 md:pb-30">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16">
+        <!-- Form (React island) -->
+        <div class="md:col-span-3">
+          <ContactForm client:load />
+        </div>
+
+        <!-- Sidebar info -->
+        <div class="md:col-span-2">
+          <div class="reveal brand-line pl-6 mb-10">
+            <h3 class="font-display font-semibold text-graphite-900 text-lg mb-3">
+              What to include
+            </h3>
+            <ul class="space-y-2 text-graphite-500 text-sm leading-relaxed">
+              <li>What you're building or exploring</li>
+              <li>Where you are in the process</li>
+              <li>What kind of support you're looking for</li>
+              <li>Any relevant timeline or constraints</li>
+            </ul>
+          </div>
+
+          <div class="reveal brand-line pl-6">
+            <h3 class="font-display font-semibold text-graphite-900 text-lg mb-3">
+              Response time
+            </h3>
+            <p class="text-graphite-500 text-sm leading-relaxed">
+              Expect a response within 1–2 business days. Every serious inquiry
+              gets direct attention.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
