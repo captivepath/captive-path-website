@@ -7,7 +7,7 @@ const journal = defineCollection({
     title: z.string(),
     excerpt: z.string(),
     date: z.string(),
-    category: z.enum(['Venture Analysis', 'Strategy', 'Incubation']),
+    category: z.enum(['Venture Analysis', 'Strategy', 'Incubation', 'Venture Evaluation', 'Execution and Strategy', 'Venture Models', 'Captive Path Perspective']),
     published: z.boolean().default(false),
     slug: z.string().optional(),
     canonical_url: z.string().optional(),
