@@ -13,7 +13,7 @@ const {
   description = 'Captive Path is an independent venture platform led by Zach Warshawsky, built to shape, support, and advance selected opportunities through strategy, systems, and modern execution.',
 } = Astro.props;
 
-const currentPath = new URL(Astro.url).pathname;
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
 <!doctype html>
