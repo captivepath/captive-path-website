@@ -29,8 +29,6 @@ That matters because the language surrounding a venture model is not just brandi
 
 A venture platform can overlap with that model, but the frame is broader. A platform can evaluate, incubate, support, connect, and selectively build without promising the same level of standardized, studio-style creation in every case. That flexibility is an advantage when the work depends more on judgment, operating design, and selective depth than on an assembly-line process.
 
-For Captive Path, this distinction matters because the stronger public identity is venture platform. That language better matches a model centered on evaluation, structure, systems, selective involvement, and operator judgment rather than on automatically functioning like a classic startup factory.[page:1]
-
 ## Where the confusion starts
 
 The confusion exists partly because the market still lacks stable language. Venture studio, startup studio, venture builder, company builder, incubator, accelerator, and platform are often collapsed into one vague category. But once the work becomes real, the distinctions reappear.
@@ -88,18 +86,6 @@ This is not a superficial branding issue. Misnaming the model creates operationa
 For founders, the wrong category can distort expectations about support, control, and how decisions will be made. A founder evaluating a studio may reasonably expect more operational intervention and more shared infrastructure. A founder evaluating a platform should ask a different set of questions: What kind of opportunities receive deep support? What does selectivity actually look like? What systems or judgment does the platform bring that others do not?
 
 For operators, the distinction shapes role clarity. In a studio model, operators may function more explicitly inside a company-creation system. In a platform model, operators may need to shift fluidly between evaluation, strategic design, infrastructure, incubation, and selective execution. That requires a different operating discipline.
-
-## Where Captive Path fits
-
-Captive Path aligns more naturally with the venture platform label because the work appears to be centered on judgment, structure, systems, and selective depth rather than on promising a uniform studio process in every case.[page:1]
-
-That does not mean venture studio language should disappear. It remains useful as a secondary explanatory term, especially in journal content and metadata, because many people search using that category language. It is also a real adjacent model, and comparing against it helps clarify what Captive Path is and is not.
-
-The stronger approach is therefore:
-
-- Use **venture platform** as the primary identity.
-- Use **venture studio** as a comparison term, explanatory term, and selective SEO term.
-- Be explicit that the difference is operational, not cosmetic.
 
 ## What this changes in practice
 

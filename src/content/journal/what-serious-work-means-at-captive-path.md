@@ -27,7 +27,7 @@ There is a kind of language that surrounds early-stage work which sounds energet
 
 That is not how serious work should be understood.
 
-At Captive Path, serious work means something more demanding. It means applying judgment before activity, structure before noise, selectivity before expansion, and execution that is grounded in what actually matters rather than what merely looks active.[page:1]
+At Captive Path, serious work means something more demanding. It means applying judgment before activity, structure before noise, selectivity before expansion, and execution that is grounded in what actually matters rather than what merely looks active.
 
 This is not a branding preference. It is an operating standard.
 
@@ -70,7 +70,7 @@ That is usually a mistake.
 
 Serious work is selective because resources are finite and because weak opportunities create hidden costs. They absorb attention, create false momentum, distort priorities, and crowd out stronger work. Selectivity is therefore not a reluctance to act. It is one of the earliest forms of value creation.
 
-For Captive Path, this matters especially because the model is centered on evaluation, structure, and selective depth. A venture platform that is not selective stops behaving like a platform and starts behaving like a throughput engine.[page:1]
+For Captive Path, this matters especially because the model is centered on evaluation, structure, and selective depth. A venture platform that is not selective stops behaving like a platform and starts behaving like a throughput engine.
 
 ## Serious work is willing to say no
 
@@ -139,7 +139,7 @@ It means:
 - going deeper only where the opportunity deserves it
 - refusing to equate movement with progress
 
-This is one reason venture platform is the right primary language. The work is not defined by generic support or activity volume. It is defined by how opportunities are evaluated, structured, and advanced with discipline.[page:1]
+The work is not defined by generic support or activity volume. It is defined by how opportunities are evaluated, structured, and advanced with discipline.
 
 That discipline should be visible not only in outcomes, but in the way decisions are made long before outcomes are obvious.
 
