@@ -55,7 +55,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
     const userAgent = context.request.headers.get('User-Agent') || 'unknown';
-    const fileUrls = body.files && body.files.length > 0 ? JSON.stringify(body.files) : null;
+
+    const validFiles = (body.files || []).filter(
+      (f) => f.url && f.url.startsWith('/api/files/contact-uploads/') && !f.url.includes('@')
+    );
+    const fileUrls = validFiles.length > 0 ? JSON.stringify(validFiles) : null;
 
     // Save to D1
     await context.env.DB.prepare(
@@ -65,8 +69,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     // Build file links HTML for email
     const siteUrl = 'https://captivepath.com';
     let filesHtml = '';
-    if (body.files && body.files.length > 0) {
-      const fileListItems = body.files.map(
+    if (validFiles.length > 0) {
+      const fileListItems = validFiles.map(
         (f) => `<li><a href="${siteUrl}${escapeHtml(f.url)}" style="color: #145250;">${escapeHtml(f.name)}</a> (${formatFileSize(f.size)})</li>`
       ).join('');
       filesHtml = `
