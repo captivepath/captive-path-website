@@ -1,6 +1,6 @@
 interface Env {
   DB: D1Database;
-  RESEND_API_KEY: string;
+  POSTMARK_API_TOKEN: string;
   CONTACT_EMAIL: string;
 }
 
@@ -46,23 +46,24 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       'INSERT INTO contacts (name, email, message, ip_address, user_agent) VALUES (?, ?, ?, ?, ?)'
     ).bind(body.name, body.email, body.message, ip, userAgent).run();
 
-    // Send email via Resend
+    // Send email via Postmark
     const contactEmail = context.env.CONTACT_EMAIL || 'zach@captivepath.com';
 
-    if (context.env.RESEND_API_KEY) {
+    if (context.env.POSTMARK_API_TOKEN) {
       try {
-        const emailRes = await fetch('https://api.resend.com/emails', {
+        const emailRes = await fetch('https://api.postmarkapp.com/email', {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${context.env.RESEND_API_KEY}`,
+            'Accept': 'application/json',
             'Content-Type': 'application/json',
+            'X-Postmark-Server-Token': context.env.POSTMARK_API_TOKEN,
           },
           body: JSON.stringify({
-            from: 'Captive Path <contact@captivepath.com>',
-            to: [contactEmail],
-            reply_to: body.email,
-            subject: `Captive Path inquiry from ${body.name}`,
-            html: `
+            From: `Captive Path <contact@captivepath.com>`,
+            To: contactEmail,
+            ReplyTo: body.email,
+            Subject: `Captive Path inquiry from ${body.name}`,
+            HtmlBody: `
               <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px;">
                 <h2 style="color: #1E1E1E; margin-bottom: 20px;">New Contact Form Submission</h2>
                 <p><strong>Name:</strong> ${escapeHtml(body.name)}</p>
@@ -75,15 +76,16 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
                 </p>
               </div>
             `,
+            MessageStream: 'outbound',
           }),
         });
 
         if (!emailRes.ok) {
           const errorBody = await emailRes.text();
-          console.error(`Resend email failed (${emailRes.status}): ${errorBody}`);
+          console.error(`Postmark email failed (${emailRes.status}): ${errorBody}`);
         }
       } catch (emailErr) {
-        console.error('Resend email error:', emailErr);
+        console.error('Postmark email error:', emailErr);
       }
     }
 

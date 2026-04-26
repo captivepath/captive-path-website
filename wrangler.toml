@@ -4,4 +4,4 @@ compatibility_date = "2024-12-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "captive-path-contacts"
-database_id = "" # Set after creating the D1 database via: npx wrangler d1 create captive-path-contacts
+database_id = "f5ef1e14-c15d-426f-898c-d754abdee980"
