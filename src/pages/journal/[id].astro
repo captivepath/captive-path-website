@@ -74,9 +74,18 @@ const articleSchema = JSON.stringify({
         {article.data.title}
       </h1>
 
-      <p class="text-graphite-500 text-sm mb-10">
-        By {article.data.author || 'Zach Warshawsky'}
-      </p>
+      <div class="flex items-center gap-3 mb-10">
+        <img
+          src="/images/zach-warshawsky-avatar.webp"
+          alt="Zach Warshawsky"
+          class="w-8 h-8 rounded-full object-cover"
+          width="32"
+          height="32"
+        />
+        <p class="text-graphite-500 text-sm">
+          By {article.data.author || 'Zach Warshawsky'}
+        </p>
+      </div>
 
       <div class="prose prose-stone max-w-none text-graphite-700 leading-relaxed">
         <Content />
