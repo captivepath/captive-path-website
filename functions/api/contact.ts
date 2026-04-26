@@ -62,7 +62,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             From: `Captive Path <contact@captivepath.com>`,
             To: contactEmail,
             ReplyTo: body.email,
-            Subject: `Captive Path inquiry from ${escapeHtml(body.name)}`,
+            Subject: `Captive Path inquiry from ${body.name}`,
             HtmlBody: `
               <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px;">
                 <h2 style="color: #1E1E1E; margin-bottom: 20px;">New Contact Form Submission</h2>
