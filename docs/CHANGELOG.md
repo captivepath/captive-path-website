@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-04-25 (Session 5 — Astro Migration & Production Launch)
+
+### Added
+- **Astro 5 migration**: Full site migrated from React/Vite SPA to Astro static site generator
+- Astro content collections for Journal (Markdown-based articles with Zod schema validation)
+- `@astrojs/react` integration for interactive components (ContactForm as React island with `client:load`)
+- `@astrojs/sitemap` integration for auto-generated sitemap
+- File-based routing replacing React Router (7 pages: Home, About, Process, Journal, Contact, Privacy, Terms)
+- Global IntersectionObserver script in Layout.astro replacing React `useReveal` hook
+- **Production domain**: captivepath.com pointed to Cloudflare Pages via CNAME DNS records
+- SSL active on captivepath.com
+- New solid black outline logo (`cp-logo-black.webp`)
+- White favicon (circular icon cropped from logo) in 32px, 192px, and 180px apple-touch-icon sizes
+- Postmark email integration replacing Resend for contact form
+- Full CCPA/CPRA compliance in Privacy Policy
+- D1 database (`captive-path-contacts`) bound to Cloudflare Pages for contact form storage
+
+### Changed
+- All static components converted from `.tsx` to `.astro` (Nav, Footer, Hero, CredibilityStrip, WhatWeDo, WhoItsFor, HowItWorks, FocusAreas, ClosingCTA, WhyZach)
+- Layout wrapper moved from React App.tsx to Astro Layout.astro
+- Contact form backend switched from Resend to Postmark API
+- Email removed from Privacy Policy and Terms pages, replaced with contact page links
+- Contact page and Journal page: added spacing below hero sections
+
+### Fixed
+- Nav active link highlighting: strip trailing slash for proper comparison in Astro 5
+- About page section order restored (Hero → WhatWeDo → WhoItsFor → Founder → FocusAreas → CTA)
+- `reveal-stagger` class restored on 7 components for cascading entrance animations
+
+### Decided
+- ADR: Astro 5 chosen over continued React SPA for better SEO (static HTML), faster loads (zero JS for static pages), and Markdown-based blog authoring
+
 ## 2026-04-25 (Session 4)
 
 ### Changed
@@ -19,7 +51,6 @@
 - Teal word highlight + underline pattern across all page headlines as a consistent branding device
 - Cloudflare Pages Function for contact form API (`/api/contact`)
 - D1 database migration for contact submissions storage
-- Resend email integration for contact form notifications
 - Wrangler configuration for D1 binding
 
 ### Changed
