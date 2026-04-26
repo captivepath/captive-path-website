@@ -193,6 +193,10 @@ export default function ContactForm({ siteKey }: { siteKey?: string }) {
       if (!res.ok) {
         setStatus('error');
         setErrorMessage(data.error || 'Something went wrong. Please try again.');
+        setTurnstileToken('');
+        if (turnstileWidgetId.current !== null && window.turnstile) {
+          window.turnstile.reset(turnstileWidgetId.current);
+        }
         return;
       }
 
@@ -206,6 +210,10 @@ export default function ContactForm({ siteKey }: { siteKey?: string }) {
     } catch {
       setStatus('error');
       setErrorMessage('Unable to send your message. Please try again later.');
+      setTurnstileToken('');
+      if (turnstileWidgetId.current !== null && window.turnstile) {
+        window.turnstile.reset(turnstileWidgetId.current);
+      }
     }
   }
 
