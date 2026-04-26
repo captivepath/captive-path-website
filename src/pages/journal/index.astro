@@ -40,11 +40,12 @@ const categories = ['All', 'Venture Analysis', 'Strategy', 'Incubation'];
   <section class="pt-10 md:pt-14 pb-22 md:pb-30">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <!-- Category filters -->
-      <div class="reveal flex flex-wrap gap-3 mb-12 md:mb-16">
+      <div class="reveal flex flex-wrap gap-3 mb-12 md:mb-16" id="journal-filters">
         {categories.map((cat) => (
           <button
+            data-category={cat}
             class:list={[
-              'px-4 py-2 text-sm font-medium rounded-sm transition-colors duration-200',
+              'journal-filter px-4 py-2 text-sm font-medium rounded-sm transition-colors duration-200 cursor-pointer',
               cat === 'All'
                 ? 'bg-graphite-900 text-stone-50'
                 : 'bg-stone-100 text-graphite-600 hover:bg-stone-200',
@@ -56,9 +57,9 @@ const categories = ['All', 'Venture Analysis', 'Strategy', 'Incubation'];
       </div>
 
       <!-- Article cards with thumbnails -->
-      <div class="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+      <div class="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10" id="journal-articles">
         {publishedArticles.map((article) => (
-          <article class="reveal group">
+          <article class="reveal group journal-card" data-category={article.data.category}>
             <a href={`/journal/${article.id}/`} class="block mb-5">
               <img
                 src={article.data.og_image || `/og/journal/${article.id}.png`}
@@ -103,4 +104,40 @@ const categories = ['All', 'Venture Analysis', 'Strategy', 'Incubation'];
       </div>
     </div>
   </section>
+
+  <script>
+    function initFilters() {
+      const buttons = document.querySelectorAll<HTMLButtonElement>('.journal-filter');
+      const cards = document.querySelectorAll<HTMLElement>('.journal-card');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const selected = btn.dataset.category || 'All';
+
+          buttons.forEach((b) => {
+            if (b.dataset.category === selected) {
+              b.className = b.className
+                .replace('bg-stone-100 text-graphite-600 hover:bg-stone-200', '')
+                .replace('bg-graphite-900 text-stone-50', '') + ' bg-graphite-900 text-stone-50';
+            } else {
+              b.className = b.className
+                .replace('bg-graphite-900 text-stone-50', '')
+                .replace('bg-stone-100 text-graphite-600 hover:bg-stone-200', '') + ' bg-stone-100 text-graphite-600 hover:bg-stone-200';
+            }
+          });
+
+          cards.forEach((card) => {
+            if (selected === 'All' || card.dataset.category === selected) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    document.addEventListener('astro:page-load', initFilters);
+    initFilters();
+  </script>
 </Layout>

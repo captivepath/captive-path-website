@@ -25,6 +25,16 @@ const SAFE_CONTENT_TYPES = new Set([
   'application/vnd.ms-powerpoint',
 ]);
 
+const INLINE_TYPES = new Set([
+  'application/pdf',
+  'image/jpeg',
+  'image/png',
+  'image/gif',
+  'image/webp',
+  'video/mp4',
+  'video/webm',
+]);
+
 export const onRequestGet: PagesFunction<Env> = async (context) => {
   const path = (context.params.path as string[]).join('/');
 
@@ -48,7 +58,8 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   const originalName = object.customMetadata?.originalName;
   const safeName = originalName ? originalName.replace(/[\x00-\x1f\x7f]/g, '_').replace(/\\/g, '\\\\').replace(/"/g, '\\"') : 'download';
-  headers.set('Content-Disposition', `attachment; filename="${safeName}"`);
+  const disposition = INLINE_TYPES.has(contentType) ? 'inline' : 'attachment';
+  headers.set('Content-Disposition', `${disposition}; filename="${safeName}"`);
 
   return new Response(object.body, { headers });
 };
