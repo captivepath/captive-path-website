@@ -35,7 +35,7 @@ Volume feels productive because it is legible. There is always something happeni
 
 The problem is that visible activity is not the same thing as compounding value. A venture system that advances too many weak ideas does not become stronger through sheer output. It becomes noisy. Weak opportunities absorb attention, create decision fatigue, and crowd out the discipline needed to identify the few opportunities that actually deserve depth.
 
-This is not a theoretical concern. The same logic appears across operating model work and early-stage systems design. When systems are not aligned with clear objectives, teams accumulate complexity, inefficiency, and unnecessary work instead of strengthening execution quality.[web:140][web:143][web:146]
+This is not a theoretical concern. The same logic appears across operating model work and early-stage systems design. When systems are not aligned with clear objectives, teams accumulate complexity, inefficiency, and unnecessary work instead of strengthening execution quality.
 
 In venture development, that problem begins even earlier. If the entry criteria are weak, the rest of the system becomes a machine for allocating resources badly.
 

@@ -37,7 +37,7 @@ Most teams acknowledge that priority matters, but fewer think carefully about se
 
 That is a more structural question.
 
-Operating model and systems literature makes this point in other contexts: work becomes more effective when strategy, process, and organizational structure are aligned rather than developed in isolation.[web:143][web:146] The same principle becomes even more important in a venture environment, where uncertainty is high and early decisions compound quickly.
+Operating model and systems literature makes this point in other contexts: work becomes more effective when strategy, process, and organizational structure are aligned rather than developed in isolation. The same principle becomes even more important in a venture environment, where uncertainty is high and early decisions compound quickly.
 
 Mis-sequencing is dangerous because it often masquerades as productivity. The team is moving. Deliverables exist. But if the order is wrong, the work is built on unstable assumptions.
 
@@ -97,7 +97,7 @@ That means clarifying how the venture intends to work.
 - Which constraints are real?
 - What kind of execution rhythm will be needed?
 
-Operating model work is crucial here because structure translates intent into action. Research on operating design repeatedly emphasizes that strategy alone is insufficient; execution depends on the way work, technology, governance, and roles are actually organized.[web:143][web:146]
+Operating model work is crucial here because structure translates intent into action. Research on operating design repeatedly emphasizes that strategy alone is insufficient; execution depends on the way work, technology, governance, and roles are actually organized.
 
 A venture without this layer often enters build mode too early and then discovers that the system supporting the work was never defined.
 
@@ -114,7 +114,7 @@ This does not mean creating corporate bureaucracy. It means defining the minimum
 - learning loops
 - operating cadence
 
-This is one of the most misunderstood stages because many founders delay infrastructure until the pain becomes obvious. But by then, misalignment has already been embedded. Early-stage systems guidance often stresses balancing simplicity with integration and clarity precisely because fragmented tools and ambiguous workflows create avoidable drag.[web:140]
+This is one of the most misunderstood stages because many founders delay infrastructure until the pain becomes obvious. But by then, misalignment has already been embedded. Early-stage systems guidance often stresses balancing simplicity with integration and clarity precisely because fragmented tools and ambiguous workflows create avoidable drag.
 
 The goal is not premature process. It is preventing chaos from becoming the default operating model.
 
@@ -125,7 +125,7 @@ Only after the opportunity is clarified, evaluated, structurally defined, and mi
 This may include:
 
 - product work
-n- messaging
+- messaging
 - brand surface area
 - demand testing
 - early acquisition experiments
