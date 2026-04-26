@@ -1,14 +1,33 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
 
-const allArticles = await getCollection('journal');
-const publishedArticles = allArticles.filter((a) => a.data.published);
+export const getStaticPaths = (async ({ paginate }) => {
+  const allArticles = await getCollection('journal');
+  const publishedArticles = allArticles
+    .filter((a) => a.data.published)
+    .sort((a, b) => {
+      const dateA = a.data.publish_date || a.data.date || '';
+      const dateB = b.data.publish_date || b.data.date || '';
+      return dateB.localeCompare(dateA);
+    });
+  return paginate(publishedArticles, { pageSize: 6 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
 const categories = ['All', 'Venture Analysis', 'Strategy', 'Incubation'];
+const pageNum = page.currentPage;
+const pageTitle = pageNum > 1
+  ? `Captive Path Journal — Page ${pageNum} | Venture Strategy and Operator Insights`
+  : 'Captive Path Journal | Venture Strategy and Operator Insights';
+const canonicalUrl = pageNum > 1
+  ? `https://captivepath.com/journal/${pageNum}/`
+  : 'https://captivepath.com/journal/';
 ---
 
 <Layout
-  title="Captive Path Journal | Venture Strategy and Operator Insights"
+  title={pageTitle}
   description="Read Captive Path's journal on venture evaluation, incubation models, strategy, systems, and the practical work of building ventures that matter."
   ogTitle="Captive Path Journal | Venture Strategy and Operator Insights"
   ogDescription="Read Captive Path's journal on venture evaluation, incubation models, strategy, systems, and the practical work of building ventures that matter."
@@ -18,7 +37,7 @@ const categories = ['All', 'Venture Analysis', 'Strategy', 'Incubation'];
   twitterTitle="Captive Path Journal | Venture Strategy and Operator Insights"
   twitterDescription="Read Captive Path's journal on venture evaluation, incubation models, strategy, systems, and the practical work of building ventures that matter."
   twitterImage="https://captivepath.com/og/pages/og-journal.png"
-  canonicalUrl="https://captivepath.com/journal/"
+  canonicalUrl={canonicalUrl}
 >
   <!-- Hero -->
   <section class="pt-32 pb-16 md:pt-40 md:pb-20 section-fade-in">
@@ -58,7 +77,7 @@ const categories = ['All', 'Venture Analysis', 'Strategy', 'Incubation'];
 
       <!-- Article cards with thumbnails -->
       <div class="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10" id="journal-articles">
-        {publishedArticles.map((article) => (
+        {page.data.map((article) => (
           <article class="reveal group journal-card" data-category={article.data.category}>
             <a href={`/journal/${article.id}/`} class="block mb-5">
               <img
@@ -92,6 +111,37 @@ const categories = ['All', 'Venture Analysis', 'Strategy', 'Incubation'];
           </article>
         ))}
       </div>
+
+      <!-- Pagination -->
+      {page.lastPage > 1 && (
+        <nav class="reveal mt-16 flex items-center justify-center gap-4" aria-label="Journal pagination">
+          {page.url.prev ? (
+            <a
+              href={page.url.prev}
+              class="px-4 py-2 text-sm font-medium text-graphite-600 bg-stone-100 hover:bg-stone-200 rounded-sm transition-colors"
+            >
+              ← Previous
+            </a>
+          ) : (
+            <span class="px-4 py-2 text-sm font-medium text-stone-300 cursor-default">← Previous</span>
+          )}
+
+          <span class="text-sm text-graphite-500">
+            Page {page.currentPage} of {page.lastPage}
+          </span>
+
+          {page.url.next ? (
+            <a
+              href={page.url.next}
+              class="px-4 py-2 text-sm font-medium text-graphite-600 bg-stone-100 hover:bg-stone-200 rounded-sm transition-colors"
+            >
+              Next →
+            </a>
+          ) : (
+            <span class="px-4 py-2 text-sm font-medium text-stone-300 cursor-default">Next →</span>
+          )}
+        </nav>
+      )}
 
       <!-- Internal link -->
       <div class="reveal mt-16 text-center">
