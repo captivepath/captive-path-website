@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useReveal } from '../hooks/useReveal';
 
 export function Privacy() {
@@ -20,59 +21,78 @@ export function Privacy() {
           <div>
             <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">1. Introduction</h2>
             <p>
-              Captive Path LLC ("Captive Path," "we," "us," or "our") respects your privacy and is committed
+              Captive Path LLC (&ldquo;Captive Path,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) respects your privacy and is committed
               to protecting your personal information. This Privacy Policy explains how we collect, use,
-              disclose and safeguard your information when you visit our website at captivepath.com (the "Site").
+              disclose and safeguard your information when you visit our website at captivepath.com (the &ldquo;Site&rdquo;).
+              This policy is provided in compliance with applicable privacy laws, including the California
+              Consumer Privacy Act as amended by the California Privacy Rights Act (CCPA/CPRA).
             </p>
           </div>
 
           <div>
             <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">2. Information We Collect</h2>
-            <p className="mb-3">We may collect the following types of information:</p>
+            <p className="mb-3">We may collect the following categories of personal information:</p>
             <ul className="list-disc pl-5 space-y-2">
               <li>
-                <strong>Information you provide directly:</strong> When you submit our contact form, we collect
-                your name, email address and any message content you provide.
+                <strong>Identifiers:</strong> When you submit our contact form, we collect
+                your name and email address.
               </li>
               <li>
-                <strong>Automatically collected information:</strong> When you visit the Site, we may automatically
-                collect certain technical information such as your IP address, browser type, operating system,
-                referring URLs and pages visited.
+                <strong>Internet or network activity:</strong> When you visit the Site, we may automatically
+                collect your IP address, browser type, operating system, referring URLs, pages visited and
+                interaction data.
+              </li>
+              <li>
+                <strong>Communications:</strong> Any message content you provide through our contact form
+                or other direct communications.
               </li>
               <li>
                 <strong>Cookies and similar technologies:</strong> We may use cookies and similar tracking
-                technologies to enhance your experience on the Site.
+                technologies to enhance your experience on the Site and to understand usage patterns.
               </li>
             </ul>
           </div>
 
           <div>
             <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">3. How We Use Your Information</h2>
-            <p className="mb-3">We use the information we collect to:</p>
+            <p className="mb-3">We use the information we collect for the following business purposes:</p>
             <ul className="list-disc pl-5 space-y-2">
-              <li>Respond to your inquiries and communications</li>
-              <li>Operate, maintain and improve the Site</li>
-              <li>Monitor and analyze usage trends and preferences</li>
-              <li>Protect against unauthorized access and legal liability</li>
-              <li>Comply with applicable laws and regulations</li>
+              <li>Responding to your inquiries and communications</li>
+              <li>Operating, maintaining and improving the Site</li>
+              <li>Monitoring and analyzing usage trends and preferences</li>
+              <li>Protecting against unauthorized access, fraud and legal liability</li>
+              <li>Complying with applicable laws and regulations</li>
+              <li>Detecting security incidents and protecting against malicious or illegal activity</li>
             </ul>
           </div>
 
           <div>
             <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">4. Sharing of Information</h2>
-            <p>
-              We do not sell, trade or rent your personal information to third parties. We may share your
-              information with trusted service providers who assist us in operating the Site and conducting
-              our business, provided they agree to keep your information confidential. We may also disclose
-              your information when required by law or to protect our rights and safety.
+            <p className="mb-3">
+              We do not sell or share your personal information for cross-context behavioral advertising.
+              We may disclose your information to the following categories of third parties for legitimate
+              business purposes:
             </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong>Service providers:</strong> Trusted companies that assist us in operating the Site,
+                hosting data and delivering services (e.g., Cloudflare for hosting and infrastructure).
+                These providers are contractually obligated to protect your information.
+              </li>
+              <li>
+                <strong>Legal compliance:</strong> Government authorities or other third parties when required
+                by law, subpoena, court order or to protect our rights and safety.
+              </li>
+            </ul>
           </div>
 
           <div>
             <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">5. Data Retention</h2>
             <p>
-              We retain your personal information only for as long as necessary to fulfill the purposes
-              for which it was collected, including to satisfy any legal, accounting or reporting requirements.
+              We retain your personal information only for as long as reasonably necessary to fulfill the
+              purposes for which it was collected. Contact form submissions are retained for up to 24 months
+              unless a longer retention period is required by law. Automatically collected technical data
+              may be retained in aggregate form for analytics purposes.
             </p>
           </div>
 
@@ -80,13 +100,67 @@ export function Privacy() {
             <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">6. Data Security</h2>
             <p>
               We implement reasonable administrative, technical and physical security measures to protect
-              your personal information. However, no method of transmission over the Internet or electronic
-              storage is completely secure, and we cannot guarantee absolute security.
+              your personal information, including encryption in transit (TLS/SSL) and secure data storage.
+              However, no method of transmission over the Internet or electronic storage is completely secure,
+              and we cannot guarantee absolute security.
             </p>
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">7. Third-Party Links</h2>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">7. Your Privacy Rights Under California Law (CCPA/CPRA)</h2>
+            <p className="mb-3">
+              If you are a California resident, you have the following rights under the California Consumer
+              Privacy Act as amended by the California Privacy Rights Act:
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong>Right to Know:</strong> You may request that we disclose the categories and specific
+                pieces of personal information we have collected about you, the categories of sources from
+                which the information was collected, the business purpose for collecting the information and
+                the categories of third parties with whom we share it.
+              </li>
+              <li>
+                <strong>Right to Delete:</strong> You may request that we delete personal information we
+                have collected from you, subject to certain exceptions (such as completing a transaction,
+                detecting security incidents or complying with legal obligations).
+              </li>
+              <li>
+                <strong>Right to Correct:</strong> You may request that we correct inaccurate personal
+                information that we maintain about you.
+              </li>
+              <li>
+                <strong>Right to Opt-Out of Sale or Sharing:</strong> We do not sell your personal information
+                and do not share it for cross-context behavioral advertising. No opt-out is necessary.
+              </li>
+              <li>
+                <strong>Right to Limit Use of Sensitive Personal Information:</strong> We do not collect
+                sensitive personal information as defined under the CPRA (such as Social Security numbers,
+                financial account details, precise geolocation or biometric data).
+              </li>
+              <li>
+                <strong>Right to Non-Discrimination:</strong> We will not discriminate against you for
+                exercising any of your privacy rights.
+              </li>
+            </ul>
+            <p className="mt-3">
+              To exercise any of these rights, please submit a request through our{' '}
+              <Link to="/contact" className="text-teal-800 hover:text-teal-700 transition-colors underline">
+                contact page
+              </Link>. We will verify your identity and respond within 45 days as required by law.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">8. Do Not Track Signals</h2>
+            <p>
+              Some browsers transmit &ldquo;Do Not Track&rdquo; (DNT) signals. At this time, we do not respond to
+              DNT signals. However, we do not engage in the type of tracking that DNT is designed to prevent
+              (cross-site behavioral advertising).
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">9. Third-Party Links</h2>
             <p>
               The Site may contain links to third-party websites. We are not responsible for the privacy
               practices or content of those websites. We encourage you to review the privacy policies of
@@ -95,47 +169,36 @@ export function Privacy() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">8. Children's Privacy</h2>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">10. Children&rsquo;s Privacy</h2>
             <p>
-              The Site is not intended for individuals under the age of 18. We do not knowingly collect
+              The Site is not intended for individuals under the age of 16. We do not knowingly collect
               personal information from children. If we become aware that we have collected personal
-              information from a child, we will take steps to delete that information.
+              information from a child under 16, we will take steps to delete that information promptly.
             </p>
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">9. Your Rights</h2>
-            <p>
-              Depending on your jurisdiction, you may have the right to access, correct, delete or restrict
-              the processing of your personal information. To exercise any of these rights, please contact
-              us using the information below.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">10. Changes to This Policy</h2>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">11. Changes to This Policy</h2>
             <p>
               We may update this Privacy Policy from time to time. Any changes will be posted on this page
-              with an updated effective date. Your continued use of the Site after any changes constitutes
-              your acceptance of the updated policy.
+              with an updated effective date. We encourage you to review this page periodically. Your
+              continued use of the Site after any changes constitutes your acceptance of the updated policy.
             </p>
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">11. Contact Us</h2>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">12. Contact Us</h2>
             <p>
-              If you have any questions about this Privacy Policy, please contact us at:
+              If you have any questions about this Privacy Policy or wish to exercise your privacy rights,
+              please reach out through our{' '}
+              <Link to="/contact" className="text-teal-800 hover:text-teal-700 transition-colors underline">
+                contact page
+              </Link>.
             </p>
             <div className="mt-3 text-graphite-600">
               <p className="font-semibold text-graphite-900">Captive Path LLC</p>
               <p>11403 West Bernardo Court, #202</p>
               <p>San Diego, California 92127</p>
-              <p className="mt-2">
-                Email:{' '}
-                <a href="mailto:zach@captivepath.com" className="text-teal-800 hover:text-teal-700 transition-colors">
-                  zach@captivepath.com
-                </a>
-              </p>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useReveal } from '../hooks/useReveal';
 
 export function Terms() {
@@ -135,18 +136,15 @@ export function Terms() {
           <div>
             <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">12. Contact Us</h2>
             <p>
-              If you have any questions about these Terms of Service, please contact us at:
+              If you have any questions about these Terms of Service, please reach out through our{' '}
+              <Link to="/contact" className="text-teal-800 hover:text-teal-700 transition-colors underline">
+                contact page
+              </Link>.
             </p>
             <div className="mt-3 text-graphite-600">
               <p className="font-semibold text-graphite-900">Captive Path LLC</p>
               <p>11403 West Bernardo Court, #202</p>
               <p>San Diego, California 92127</p>
-              <p className="mt-2">
-                Email:{' '}
-                <a href="mailto:zach@captivepath.com" className="text-teal-800 hover:text-teal-700 transition-colors">
-                  zach@captivepath.com
-                </a>
-              </p>
             </div>
           </div>
         </div>
