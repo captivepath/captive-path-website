@@ -16,7 +16,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
-const categories = ['All', 'Venture Analysis', 'Strategy', 'Incubation'];
+const categories = ['All', 'Venture Analysis', 'Venture Evaluation', 'Strategy', 'Execution and Strategy', 'Incubation', 'Venture Models', 'Captive Path Perspective'];
 const pageNum = page.currentPage;
 const pageTitle = pageNum > 1
   ? `Captive Path Journal — Page ${pageNum} | Venture Strategy and Operator Insights`
