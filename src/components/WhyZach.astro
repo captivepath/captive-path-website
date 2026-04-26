@@ -33,49 +33,40 @@ const { expanded = false } = Astro.props;
 
       <div class={expanded ? 'max-w-3xl' : 'md:col-span-3'}>
         <p class="reveal text-xs font-display font-medium tracking-widest uppercase text-teal-400 mb-4">
-          Founder
+          Zach Warshawsky <span class="text-stone-500">|</span> Founder
         </p>
 
         <h2 class="reveal font-display text-4xl md:text-5xl text-stone-50 leading-tight font-bold mb-8">
           Led by <span class="text-highlight-light">operator judgment.</span>
         </h2>
 
-        <p class="reveal text-stone-300 text-lg leading-relaxed">
+        <p class="reveal text-stone-300 text-lg leading-relaxed mb-8">
           Captive Path is founded and led by Zach Warshawsky, whose background
           spans technology, operations, systems, growth and venture building.
           The advantage is not just access to tools... it is the ability to
           combine strategic thinking with real execution leverage across modern
           platforms and workflows.
         </p>
+
+        <p class="reveal text-stone-400 text-lg font-display font-medium italic">
+          "Judgment first. Capability second. Tools third."
+        </p>
       </div>
     </div>
 
-    <!-- Bottom row: 3 stat boxes left, quote + name right -->
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16 items-start">
-      <div class="reveal md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
-        <div class="bg-graphite-800 p-5 md:p-6">
-          <span class="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">20+</span>
-          <span class="text-stone-400 text-sm leading-snug">Years across technology &amp; operations</span>
-        </div>
-        <div class="bg-graphite-800 p-5 md:p-6">
-          <span class="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">Multi-domain</span>
-          <span class="text-stone-400 text-sm leading-snug">Systems, growth, venture building</span>
-        </div>
-        <div class="bg-graphite-800 p-5 md:p-6">
-          <span class="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">Operator-led</span>
-          <span class="text-stone-400 text-sm leading-snug">Strategy paired with real execution</span>
-        </div>
+    <!-- Bottom row: 3 stat boxes full width -->
+    <div class="reveal grid grid-cols-1 sm:grid-cols-3 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
+      <div class="bg-graphite-800 p-6 md:p-8">
+        <span class="block font-display text-3xl md:text-4xl font-bold text-teal-400 mb-1">20+ Years</span>
+        <span class="text-stone-400 text-sm leading-snug">Across technology and operations</span>
       </div>
-
-      <div class="reveal md:col-span-2 flex flex-col justify-center">
-        <blockquote class="border-l-2 border-teal-700 pl-5 mb-6">
-          <p class="text-stone-300 text-lg font-display font-medium italic leading-relaxed">
-            "Judgment first. Capability second. Tools third."
-          </p>
-        </blockquote>
-        <span class="text-sm text-teal-400 font-display font-medium tracking-wide">
-          Zach Warshawsky
-        </span>
+      <div class="bg-graphite-800 p-6 md:p-8">
+        <span class="block font-display text-3xl md:text-4xl font-bold text-teal-400 mb-1">Multi-domain</span>
+        <span class="text-stone-400 text-sm leading-snug">Systems, growth, venture building</span>
+      </div>
+      <div class="bg-graphite-800 p-6 md:p-8">
+        <span class="block font-display text-3xl md:text-4xl font-bold text-teal-400 mb-1">Operator-led</span>
+        <span class="text-stone-400 text-sm leading-snug">Strategy paired with real execution</span>
       </div>
     </div>
   </div>
