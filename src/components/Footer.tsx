@@ -52,8 +52,16 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-stone-200 pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <p className="text-xs text-graphite-400">
-            &copy; {year} Captive Path. All rights reserved.
+            &copy; {year} Captive Path LLC. All rights reserved.
           </p>
+          <div className="flex gap-4">
+            <Link to="/privacy" className="text-xs text-graphite-400 hover:text-graphite-600 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="text-xs text-graphite-400 hover:text-graphite-600 transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

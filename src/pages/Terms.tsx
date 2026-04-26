@@ -1,0 +1,156 @@
+import { useReveal } from '../hooks/useReveal';
+
+export function Terms() {
+  const ref = useReveal();
+
+  return (
+    <section ref={ref} className="pt-32 pb-20 md:pt-40 md:pb-26 section-fade-in">
+      <div className="max-w-3xl mx-auto px-6 md:px-10">
+        <p className="reveal text-xs font-display font-medium tracking-widest uppercase text-teal-800 mb-4">
+          Legal
+        </p>
+        <h1 className="reveal font-display text-4xl sm:text-5xl text-graphite-900 leading-tight font-bold mb-6">
+          Terms of Service
+        </h1>
+        <p className="reveal text-graphite-500 text-sm mb-12">
+          Effective date: April 25, 2026
+        </p>
+
+        <div className="reveal prose-legal space-y-8 text-graphite-700 text-base leading-relaxed">
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">1. Acceptance of Terms</h2>
+            <p>
+              By accessing or using the website at captivepath.com (the "Site"), you agree to be bound by
+              these Terms of Service ("Terms") and our Privacy Policy. If you do not agree to these Terms,
+              you must not use the Site. These Terms constitute a legally binding agreement between you and
+              Captive Path LLC ("Captive Path," "we," "us," or "our").
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">2. Use of the Site</h2>
+            <p className="mb-3">You agree to use the Site only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Use the Site in any way that violates any applicable law or regulation</li>
+              <li>Attempt to gain unauthorized access to any portion of the Site or any systems or networks connected to the Site</li>
+              <li>Use the Site to transmit any advertising or promotional material without our prior written consent</li>
+              <li>Impersonate or attempt to impersonate Captive Path, a Captive Path employee, or any other person or entity</li>
+              <li>Engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Site</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">3. Intellectual Property</h2>
+            <p>
+              All content on the Site, including text, graphics, logos, images, software and other materials
+              (collectively, "Content"), is the property of Captive Path LLC or its licensors and is protected
+              by United States and international copyright, trademark and other intellectual property laws.
+              You may not reproduce, distribute, modify, create derivative works of, publicly display or
+              otherwise use any Content without our prior written permission.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">4. No Professional Advice</h2>
+            <p>
+              The information provided on the Site is for general informational purposes only and does not
+              constitute professional, legal, financial, investment or other advice. You should not rely on
+              any information on the Site as a substitute for professional advice tailored to your specific
+              situation. Captive Path makes no representations or warranties about the suitability, reliability,
+              availability or accuracy of the information contained on the Site.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">5. Limitation of Liability</h2>
+            <p>
+              To the fullest extent permitted by applicable law, Captive Path LLC, its officers, directors,
+              employees and agents shall not be liable for any indirect, incidental, special, consequential
+              or punitive damages, including but not limited to loss of profits, data, use, goodwill or
+              other intangible losses, resulting from your access to or use of (or inability to access or
+              use) the Site, any conduct or content of any third party on the Site, or any content obtained
+              from the Site.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">6. Disclaimer of Warranties</h2>
+            <p>
+              The Site is provided on an "as is" and "as available" basis without any warranties of any kind,
+              whether express or implied, including but not limited to implied warranties of merchantability,
+              fitness for a particular purpose and non-infringement. We do not warrant that the Site will be
+              uninterrupted, secure or error-free, or that any defects will be corrected.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">7. Indemnification</h2>
+            <p>
+              You agree to indemnify, defend and hold harmless Captive Path LLC, its officers, directors,
+              employees and agents from and against any claims, liabilities, damages, losses and expenses,
+              including reasonable attorneys' fees, arising out of or in any way connected with your access
+              to or use of the Site or your violation of these Terms.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">8. Third-Party Links</h2>
+            <p>
+              The Site may contain links to third-party websites or services that are not owned or controlled
+              by Captive Path. We have no control over and assume no responsibility for the content, privacy
+              policies or practices of any third-party websites. You acknowledge and agree that we are not
+              responsible or liable for any damage or loss caused by the use of any such content or services.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">9. Modifications to Terms</h2>
+            <p>
+              We reserve the right to modify or replace these Terms at any time at our sole discretion.
+              If a revision is material, we will provide notice by posting the updated Terms on the Site
+              with a new effective date. Your continued use of the Site after any changes constitutes your
+              acceptance of the revised Terms.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">10. Governing Law</h2>
+            <p>
+              These Terms shall be governed by and construed in accordance with the laws of the State of
+              California, without regard to its conflict of law provisions. Any disputes arising from these
+              Terms or your use of the Site shall be resolved exclusively in the state or federal courts
+              located in San Diego County, California.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">11. Severability</h2>
+            <p>
+              If any provision of these Terms is found to be unenforceable or invalid, that provision shall
+              be limited or eliminated to the minimum extent necessary so that these Terms shall otherwise
+              remain in full force and effect.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl font-semibold text-graphite-900 mb-3">12. Contact Us</h2>
+            <p>
+              If you have any questions about these Terms of Service, please contact us at:
+            </p>
+            <div className="mt-3 text-graphite-600">
+              <p className="font-semibold text-graphite-900">Captive Path LLC</p>
+              <p>11403 West Bernardo Court, #202</p>
+              <p>San Diego, California 92127</p>
+              <p className="mt-2">
+                Email:{' '}
+                <a href="mailto:zach@captivepath.com" className="text-teal-800 hover:text-teal-700 transition-colors">
+                  zach@captivepath.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

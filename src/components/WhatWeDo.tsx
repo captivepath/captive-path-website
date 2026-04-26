@@ -57,7 +57,7 @@ export function WhatWeDo({ condensed = false }: WhatWeDoProps) {
           {pillars.map((pillar) => (
             <div
               key={pillar.number}
-              className="reveal bg-stone-50 p-8 md:p-10 hover:bg-stone-100/30 transition-colors duration-300"
+              className="reveal bg-stone-50 p-8 md:p-10 hover:bg-stone-100/80 transition-colors duration-300"
             >
               <span className="text-sm font-display font-medium text-teal-800 tracking-wider mb-3 block">
                 {pillar.number}
