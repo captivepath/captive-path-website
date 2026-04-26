@@ -15,6 +15,7 @@ interface Props {
   twitterDescription?: string;
   twitterImage?: string;
   canonicalUrl?: string;
+  ogType?: string;
   noindex?: boolean;
   jsonLd?: string | string[];
 }
@@ -31,6 +32,7 @@ const {
   twitterDescription,
   twitterImage,
   canonicalUrl,
+  ogType = 'website',
   noindex = false,
   jsonLd,
 } = Astro.props;
@@ -68,7 +70,7 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <!-- Open Graph -->
     <meta property="og:title" content={resolvedOgTitle} />
     <meta property="og:description" content={resolvedOgDescription} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={resolvedOgUrl} />
     <meta property="og:site_name" content="Captive Path" />
     <meta property="og:image" content={resolvedOgImage} />
