@@ -89,17 +89,17 @@ Three concentric circles positioned off the top-right corner. The headline inten
 <style>
   @font-face {
     font-family: 'Space Grotesk';
-    src: url('fonts/SpaceGrotesk-400.ttf') format('woff2');
+    src: url('fonts/SpaceGrotesk-400.ttf') format('truetype');
     font-weight: 400;
   }
   @font-face {
     font-family: 'Space Grotesk';
-    src: url('fonts/SpaceGrotesk-500.ttf') format('woff2');
+    src: url('fonts/SpaceGrotesk-500.ttf') format('truetype');
     font-weight: 500;
   }
   @font-face {
     font-family: 'Space Grotesk';
-    src: url('fonts/SpaceGrotesk-700.ttf') format('woff2');
+    src: url('fonts/SpaceGrotesk-700.ttf') format('truetype');
     font-weight: 700;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
