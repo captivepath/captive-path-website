@@ -47,7 +47,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   headers.set('Cache-Control', 'public, max-age=31536000, immutable');
 
   const originalName = object.customMetadata?.originalName;
-  const safeName = originalName ? originalName.replace(/\\/g, '\\\\').replace(/"/g, '\\"') : 'download';
+  const safeName = originalName ? originalName.replace(/[\x00-\x1f\x7f]/g, '_').replace(/\\/g, '\\\\').replace(/"/g, '\\"') : 'download';
   headers.set('Content-Disposition', `attachment; filename="${safeName}"`);
 
   return new Response(object.body, { headers });
