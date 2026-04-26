@@ -5,3 +5,7 @@ compatibility_date = "2024-12-01"
 binding = "DB"
 database_name = "captive-path-contacts"
 database_id = "f5ef1e14-c15d-426f-898c-d754abdee980"
+
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "captive-path-uploads"

@@ -2,16 +2,33 @@ interface Env {
   DB: D1Database;
   POSTMARK_API_TOKEN: string;
   CONTACT_EMAIL: string;
+  TURNSTILE_SECRET_KEY: string;
+}
+
+interface UploadedFile {
+  name: string;
+  key: string;
+  url: string;
+  size: number;
 }
 
 interface ContactPayload {
   name: string;
   email: string;
   message: string;
+  files?: UploadedFile[];
+  turnstileToken?: string;
 }
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function formatFileSize(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  if (bytes < 1024 * 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  return `${(bytes / (1024 * 1024 * 1024)).toFixed(1)} GB`;
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
@@ -38,13 +55,58 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       );
     }
 
+    if (context.env.TURNSTILE_SECRET_KEY) {
+      if (!body.turnstileToken) {
+        return new Response(
+          JSON.stringify({ error: 'Human verification is required.' }),
+          { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+        );
+      }
+
+      const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          secret: context.env.TURNSTILE_SECRET_KEY,
+          response: body.turnstileToken,
+          remoteip: context.request.headers.get('CF-Connecting-IP') || '',
+        }),
+      });
+
+      const verifyData = await verifyRes.json() as { success: boolean };
+      if (!verifyData.success) {
+        return new Response(
+          JSON.stringify({ error: 'Verification failed. Please try again.' }),
+          { status: 403, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+        );
+      }
+    }
+
     const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
     const userAgent = context.request.headers.get('User-Agent') || 'unknown';
 
+    const validFiles = (body.files || []).filter(
+      (f) => f.url && f.url.startsWith('/api/files/contact-uploads/') && !f.url.includes('@')
+    );
+    const fileUrls = validFiles.length > 0 ? JSON.stringify(validFiles) : null;
+
     // Save to D1
     await context.env.DB.prepare(
-      'INSERT INTO contacts (name, email, message, ip_address, user_agent) VALUES (?, ?, ?, ?, ?)'
-    ).bind(body.name, body.email, body.message, ip, userAgent).run();
+      'INSERT INTO contacts (name, email, message, ip_address, user_agent, file_urls) VALUES (?, ?, ?, ?, ?, ?)'
+    ).bind(body.name, body.email, body.message, ip, userAgent, fileUrls).run();
+
+    // Build file links HTML for email
+    const siteUrl = 'https://captivepath.com';
+    let filesHtml = '';
+    if (validFiles.length > 0) {
+      const fileListItems = validFiles.map(
+        (f) => `<li><a href="${siteUrl}${escapeHtml(f.url)}" style="color: #145250;">${escapeHtml(f.name)}</a> (${formatFileSize(f.size)})</li>`
+      ).join('');
+      filesHtml = `
+        <p><strong>Attached Files:</strong></p>
+        <ul style="margin: 8px 0; padding-left: 20px;">${fileListItems}</ul>
+      `;
+    }
 
     // Send email via Postmark
     const contactEmail = context.env.CONTACT_EMAIL || 'zach@captivepath.com';
@@ -70,6 +132,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
                 <p><strong>Email:</strong> <a href="mailto:${escapeHtml(body.email)}">${escapeHtml(body.email)}</a></p>
                 <p><strong>Message:</strong></p>
                 <div style="background: #F5F0EB; padding: 16px; border-radius: 4px; white-space: pre-wrap;">${escapeHtml(body.message)}</div>
+                ${filesHtml}
                 <hr style="border: none; border-top: 1px solid #E8E0D8; margin: 24px 0;" />
                 <p style="color: #6B6B6B; font-size: 12px;">
                   Submitted at ${new Date().toISOString()} from IP ${escapeHtml(ip)}

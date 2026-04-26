@@ -8,7 +8,9 @@ export default defineConfig({
   site: 'https://captivepath.com',
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/privacy') && !page.includes('/terms'),
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],

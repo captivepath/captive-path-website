@@ -4,9 +4,47 @@ import WhatWeDo from '../components/WhatWeDo.astro';
 import WhoItsFor from '../components/WhoItsFor.astro';
 import FocusAreas from '../components/FocusAreas.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
+
+const aboutSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://captivepath.com/about/#webpage",
+      "url": "https://captivepath.com/about/",
+      "name": "About Captive Path | Operator-Led Venture Platform",
+      "description": "Learn about Captive Path, an independent venture platform led by Zach Warshawsky and built for venture evaluation, strategic clarity, and serious execution.",
+      "isPartOf": { "@id": "https://captivepath.com/#website" },
+      "about": { "@id": "https://captivepath.com/#organization" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://captivepath.com/#zach-warshawsky",
+      "name": "Zach Warshawsky",
+      "jobTitle": "Founder",
+      "worksFor": { "@id": "https://captivepath.com/#organization" },
+      "url": "https://captivepath.com/about/",
+      "description": "Entrepreneur, operator, and systems thinker with 20+ years building and scaling technology and marketing businesses. Co-founder of Profitable Media. Founder of Captive Path.",
+      "sameAs": ["https://www.linkedin.com/in/zachwarshawsky/"]
+    }
+  ]
+});
 ---
 
-<Layout title="About — Captive Path" description="An independent venture platform built for serious work. Learn about Captive Path's mission, capabilities, and founder Zach Warshawsky.">
+<Layout
+  title="About Captive Path | Operator-Led Venture Platform"
+  description="Learn about Captive Path, an independent venture platform led by Zach Warshawsky and built for venture evaluation, strategic clarity, and serious execution."
+  ogTitle="About Captive Path | Operator-Led Venture Platform"
+  ogDescription="Learn about Captive Path, an independent venture platform led by Zach Warshawsky and built for venture evaluation, strategic clarity, and serious execution."
+  ogUrl="https://captivepath.com/about/"
+  ogImage="https://captivepath.com/og/pages/og-about.png"
+  ogImageAlt="About Captive Path — Built for the work between vision and execution"
+  twitterTitle="About Captive Path | Operator-Led Venture Platform"
+  twitterDescription="Learn about Captive Path, an independent venture platform led by Zach Warshawsky and built for venture evaluation, strategic clarity, and serious execution."
+  twitterImage="https://captivepath.com/og/pages/og-about.png"
+  canonicalUrl="https://captivepath.com/about/"
+  jsonLd={aboutSchema}
+>
   <!-- Hero -->
   <section class="pt-32 pb-20 md:pt-40 md:pb-26 section-fade-in">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
@@ -37,9 +75,12 @@ import ClosingCTA from '../components/ClosingCTA.astro';
         <div class="reveal md:col-span-2">
           <div class="photo-editorial rounded-sm overflow-hidden">
             <img
-              src="/images/zach-warshawsky.jpg"
+              src="/images/zach-warshawsky.webp"
               alt="Zach Warshawsky, Founder of Captive Path"
               class="w-full h-auto object-cover grayscale-[20%] contrast-[1.05]"
+              width="600"
+              height="600"
+              loading="lazy"
             />
           </div>
         </div>
@@ -51,12 +92,15 @@ import ClosingCTA from '../components/ClosingCTA.astro';
           <h2 class="reveal font-display text-3xl md:text-4xl text-stone-50 leading-tight font-bold mb-8">
             Led by <span class="text-highlight-light">operator judgment.</span>
           </h2>
-          <p class="reveal text-stone-300 text-lg leading-relaxed">
+          <p class="reveal text-stone-300 text-lg leading-relaxed mb-6">
             Captive Path is founded and led by Zach Warshawsky, whose background
             spans technology, operations, systems, growth and venture building.
             The advantage is not just access to tools... it is the ability to
             combine strategic thinking with real execution leverage across modern
             platforms and workflows.
+          </p>
+          <p class="reveal text-stone-300 text-lg leading-relaxed">
+            <strong class="text-stone-100">Zach Warshawsky</strong> is the founder of Captive Path. He is an entrepreneur, operator, and systems thinker with over two decades of experience building and scaling technology and marketing businesses. He co-founded Profitable Media, a marketing technology and growth strategy company, and has spent his career at the intersection of business operations, technology, and strategic execution. Captive Path is the vehicle through which he evaluates and builds ventures that meet his standard for what is worth building seriously.
           </p>
         </div>
       </div>
@@ -88,6 +132,16 @@ import ClosingCTA from '../components/ClosingCTA.astro';
             Zach Warshawsky
           </span>
         </div>
+      </div>
+
+      <!-- Internal links -->
+      <div class="reveal mt-14 flex flex-col sm:flex-row gap-4">
+        <a href="/process" class="text-sm font-medium text-teal-400 hover:text-teal-300 transition-colors link-underline">
+          See the venture evaluation process →
+        </a>
+        <a href="/contact" class="text-sm font-medium text-teal-400 hover:text-teal-300 transition-colors link-underline">
+          Start a conversation →
+        </a>
       </div>
     </div>
   </section>
