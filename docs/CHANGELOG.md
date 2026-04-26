@@ -1,5 +1,49 @@
 # Changelog
 
+## 2026-04-26 (Session 6 — Complete SEO/AEO Pass & Contact Form Enhancements)
+
+### Added
+- **robots.txt**: Standard allow-all with sitemap reference
+- **Canonical tags**: Self-referencing on every page (dynamic via Layout)
+- **Meta tags**: Unique `<title>` and `meta description` for all 10 pages
+- **Open Graph**: Per-page 1200x630 PNG images, titles, descriptions, URLs
+- **Twitter Cards**: `summary_large_image` with per-page images
+- **JSON-LD structured data**: Organization, WebSite, FAQPage (home + process), AboutPage, Person, Service, ContactPage, Article (x3)
+- **FAQ sections**: 5-item FAQ on homepage, 4-item FAQ on process page
+- **Entity clarifier block**: Homepage positioning statement
+- **Expanded founder bio**: Stats, quote, and internal links on about page
+- **3 journal articles published**: evaluating-venture-ideas, incubation-model, systems-over-hustle
+- **Article prose styling**: `@tailwindcss/typography` with custom overrides for headings, lists, blockquotes
+- **llms.txt**: AI crawler reference file
+- **Contact form file uploads**: Drag-and-drop zone, R2 storage (`captive-path-uploads`), 500 MB limit, multi-file, visual status indicators
+- **File serving endpoint**: `GET /api/files/[[path]]` with Content-Type whitelist and security headers
+- **Upload endpoint**: `POST /api/upload` with UUID-based keys
+- **D1 migration**: `0002_add_file_urls.sql` adding file_urls column to contacts
+- **Cloudflare Turnstile**: Managed-mode human verification on contact form (frontend + server-side validation)
+- **Layout head slot**: For page-specific script injection
+- **Journal editorial system doc**: `docs/captivepath-journal-editorial-system.md`
+- **Sprint S2 documentation**: Sprint notes, updated LATEST.md and CHANGELOG.md
+
+### Changed
+- Sitemap: Now includes 3 journal article URLs (8 URLs total); privacy/terms excluded
+- `og:type` correctly set to `article` for journal pages
+- Contact form completely rewritten with file upload + Turnstile integration
+- Contact API: accepts file metadata, validates URLs, includes file links in email
+- Layout.astro: added `ogType` prop, `noindex` prop, head slot
+- Footer and Nav: enhanced internal linking
+- Zach Warshawsky photo converted to WebP
+- Logo preload added, width/height on all images
+
+### Security
+- Content-Disposition: `attachment` (prevents XSS via HTML uploads)
+- `X-Content-Type-Options: nosniff` on file responses
+- Content-Type whitelist (safe types only, SVG excluded)
+- File path restricted to `contact-uploads/` prefix
+- Filename escaping: control characters, backslashes, double quotes
+- UUID in R2 keys prevents key collisions
+- Server-side URL validation prevents phishing via fabricated file links
+- Turnstile token validation on contact form submission
+
 ## 2026-04-25 (Session 5 — Astro Migration & Production Launch)
 
 ### Added

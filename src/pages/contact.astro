@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.tsx';
 
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+
 const contactSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ContactPage",
@@ -27,6 +29,10 @@ const contactSchema = JSON.stringify({
   canonicalUrl="https://captivepath.com/contact/"
   jsonLd={contactSchema}
 >
+  {turnstileSiteKey && (
+    <script slot="head" src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+  )}
+
   <!-- Hero -->
   <section class="pt-32 pb-20 md:pt-40 md:pb-26 section-fade-in">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
@@ -48,7 +54,7 @@ const contactSchema = JSON.stringify({
       <div class="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16">
         <!-- Form (React island) -->
         <div class="md:col-span-3">
-          <ContactForm client:load />
+          <ContactForm client:load siteKey={turnstileSiteKey} />
         </div>
 
         <!-- Sidebar info -->

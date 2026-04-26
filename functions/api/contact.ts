@@ -2,6 +2,7 @@ interface Env {
   DB: D1Database;
   POSTMARK_API_TOKEN: string;
   CONTACT_EMAIL: string;
+  TURNSTILE_SECRET_KEY: string;
 }
 
 interface UploadedFile {
@@ -16,6 +17,7 @@ interface ContactPayload {
   email: string;
   message: string;
   files?: UploadedFile[];
+  turnstileToken?: string;
 }
 
 function isValidEmail(email: string): boolean {
@@ -51,6 +53,33 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         JSON.stringify({ error: 'Please provide a valid email address.' }),
         { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
       );
+    }
+
+    if (context.env.TURNSTILE_SECRET_KEY) {
+      if (!body.turnstileToken) {
+        return new Response(
+          JSON.stringify({ error: 'Human verification is required.' }),
+          { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+        );
+      }
+
+      const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          secret: context.env.TURNSTILE_SECRET_KEY,
+          response: body.turnstileToken,
+          remoteip: context.request.headers.get('CF-Connecting-IP') || '',
+        }),
+      });
+
+      const verifyData = await verifyRes.json() as { success: boolean };
+      if (!verifyData.success) {
+        return new Response(
+          JSON.stringify({ error: 'Verification failed. Please try again.' }),
+          { status: 403, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+        );
+      }
     }
 
     const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';

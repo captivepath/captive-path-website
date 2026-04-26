@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 
 interface UploadedFile {
   name: string;
@@ -24,13 +24,52 @@ function formatFileSize(bytes: number): string {
 
 const MAX_FILE_SIZE = 500 * 1024 * 1024; // 500 MB
 
-export default function ContactForm() {
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (container: string | HTMLElement, options: Record<string, unknown>) => string;
+      reset: (widgetId: string) => void;
+    };
+  }
+}
+
+export default function ContactForm({ siteKey }: { siteKey?: string }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [files, setFiles] = useState<PendingFile[]>([]);
   const [isDragging, setIsDragging] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
   const dragCounterRef = useRef(0);
+
+  useEffect(() => {
+    if (!siteKey || !turnstileRef.current) return;
+
+    function renderWidget() {
+      if (!window.turnstile || !turnstileRef.current) return;
+      if (turnstileWidgetId.current !== null) return;
+      turnstileWidgetId.current = window.turnstile.render(turnstileRef.current, {
+        sitekey: siteKey,
+        callback: (token: string) => setTurnstileToken(token),
+        'expired-callback': () => setTurnstileToken(''),
+        theme: 'light',
+      });
+    }
+
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      const interval = setInterval(() => {
+        if (window.turnstile) {
+          clearInterval(interval);
+          renderWidget();
+        }
+      }, 200);
+      return () => clearInterval(interval);
+    }
+  }, [siteKey]);
 
   const addFiles = useCallback((newFiles: FileList | File[]) => {
     const toAdd: PendingFile[] = [];
@@ -144,7 +183,7 @@ export default function ContactForm() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message, files: uploadedFiles }),
+        body: JSON.stringify({ name, email, message, files: uploadedFiles, turnstileToken: turnstileToken || undefined }),
       });
 
       const data = await res.json();
@@ -157,6 +196,10 @@ export default function ContactForm() {
 
       setStatus('sent');
       setFiles([]);
+      setTurnstileToken('');
+      if (turnstileWidgetId.current !== null && window.turnstile) {
+        window.turnstile.reset(turnstileWidgetId.current);
+      }
       form.reset();
     } catch {
       setStatus('error');
@@ -322,6 +365,9 @@ export default function ContactForm() {
         )}
       </div>
 
+      {/* Turnstile widget */}
+      {siteKey && <div ref={turnstileRef} className="mb-2" />}
+
       {status === 'error' && (
         <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-sm px-4 py-3">
           {errorMessage}
@@ -331,7 +377,7 @@ export default function ContactForm() {
       <div>
         <button
           type="submit"
-          disabled={status === 'sending' || hasUploading}
+          disabled={status === 'sending' || hasUploading || (!!siteKey && !turnstileToken)}
           className="inline-flex items-center justify-center px-8 py-4 bg-teal-800 text-stone-50 text-sm font-medium tracking-wide rounded hover:bg-teal-700 transition-all duration-200 hover:shadow-lg hover:shadow-teal-900/20 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {status === 'sending' ? 'Sending...' : hasUploading ? 'Uploading files...' : 'Send message'}
