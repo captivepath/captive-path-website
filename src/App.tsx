@@ -6,6 +6,8 @@ import { About } from './pages/About';
 import { Process } from './pages/Process';
 import { Journal } from './pages/Journal';
 import { Contact } from './pages/Contact';
+import { Privacy } from './pages/Privacy';
+import { Terms } from './pages/Terms';
 import { ScrollToTop } from './components/ScrollToTop';
 
 export default function App() {
@@ -20,6 +22,8 @@ export default function App() {
           <Route path="/process" element={<Process />} />
           <Route path="/journal" element={<Journal />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </main>
       <Footer />
