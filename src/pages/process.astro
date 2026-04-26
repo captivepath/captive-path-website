@@ -3,9 +3,70 @@ import Layout from '../layouts/Layout.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import FocusAreas from '../components/FocusAreas.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://captivepath.com/process/#service",
+  "name": "Venture Building and Strategy",
+  "serviceType": "Venture Platform Services",
+  "provider": { "@id": "https://captivepath.com/#organization" },
+  "url": "https://captivepath.com/process/",
+  "description": "Captive Path evaluates opportunities, shapes strategy, builds the right foundation, and advances ventures through structured operator-led execution.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Venture Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Opportunity Evaluation", "description": "Honest assessment of the opportunity, the market, and the fit before any commitment is made." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strategy Shaping", "description": "Defining the model, market approach, and execution priorities for the venture." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Foundation Building", "description": "Building the systems, infrastructure, and operational foundation the venture needs to execute." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Venture Advancement", "description": "Ongoing operator-led support to advance the venture through structured execution." } }
+    ]
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the Captive Path process designed for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The process is designed for opportunities where the fundamentals are strong but the path from idea to execution is unclear. It is most relevant for founders and operators who need more than advice — they need structured involvement from someone who has built systems and businesses before." }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I reach out to Captive Path?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The earlier the better. Captive Path's process starts with evaluation, which means the conversation is useful even before a venture is fully defined. If you have an opportunity worth exploring, that is enough to start." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after the evaluation phase?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If the opportunity clears evaluation, Captive Path moves into strategy shaping — defining the model, the market approach, and the execution priorities. From there, the engagement moves into building and then advancing, with the level of ongoing involvement determined by what the venture actually needs." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Captive Path take equity?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Engagement structures vary depending on the opportunity and the nature of the involvement. This is discussed directly during the evaluation phase." }
+    }
+  ]
+});
 ---
 
-<Layout title="Process — Captive Path" description="How Captive Path works: a structured process from evaluation through execution. Every engagement starts with clarity.">
+<Layout
+  title="Captive Path Process | Venture Evaluation to Execution"
+  description="See how Captive Path evaluates opportunities, shapes strategy, builds the right foundation, and supports ventures where deeper involvement is justified."
+  ogTitle="Captive Path Process | Venture Evaluation to Execution"
+  ogDescription="See how Captive Path evaluates opportunities, shapes strategy, builds the right foundation, and supports ventures where deeper involvement is justified."
+  ogUrl="https://captivepath.com/process/"
+  ogImage="https://captivepath.com/og/pages/og-process.png"
+  ogImageAlt="Captive Path Process — Clarity first. Then momentum."
+  twitterTitle="Captive Path Process | Venture Evaluation to Execution"
+  twitterDescription="See how Captive Path evaluates opportunities, shapes strategy, builds the right foundation, and supports ventures where deeper involvement is justified."
+  twitterImage="https://captivepath.com/og/pages/og-process.png"
+  canonicalUrl="https://captivepath.com/process/"
+  jsonLd={[serviceSchema, faqSchema]}
+>
   <!-- Hero -->
   <section class="pt-32 pb-20 md:pt-40 md:pb-26 section-fade-in">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
@@ -65,6 +126,52 @@ import ClosingCTA from '../components/ClosingCTA.astro';
             </p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-22 md:py-30 border-t border-stone-200 section-fade-in">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="max-w-3xl">
+        <p class="reveal text-xs font-display font-medium tracking-widest uppercase text-teal-800 mb-4">
+          Frequently asked questions
+        </p>
+        <h2 class="reveal font-display text-3xl md:text-4xl text-graphite-900 leading-tight font-bold mb-12">
+          Questions about the process.
+        </h2>
+
+        <div class="reveal-stagger space-y-8">
+          <div class="reveal">
+            <h3 class="font-display font-semibold text-graphite-900 text-lg mb-3">Who is the Captive Path process designed for?</h3>
+            <p class="text-graphite-600 text-base leading-relaxed">The process is designed for opportunities where the fundamentals are strong but the path from idea to execution is unclear. It is most relevant for founders and operators who need more than advice — they need structured involvement from someone who has built systems and businesses before.</p>
+          </div>
+
+          <div class="reveal">
+            <h3 class="font-display font-semibold text-graphite-900 text-lg mb-3">When should I reach out?</h3>
+            <p class="text-graphite-600 text-base leading-relaxed">The earlier the better. Captive Path's process starts with evaluation, which means the conversation is useful even before a venture is fully defined. If you have an opportunity worth exploring, that is enough to start.</p>
+          </div>
+
+          <div class="reveal">
+            <h3 class="font-display font-semibold text-graphite-900 text-lg mb-3">What happens after the evaluation phase?</h3>
+            <p class="text-graphite-600 text-base leading-relaxed">If the opportunity clears evaluation, Captive Path moves into strategy shaping — defining the model, the market approach, and the execution priorities. From there, the engagement moves into building and then advancing, with the level of ongoing involvement determined by what the venture actually needs.</p>
+          </div>
+
+          <div class="reveal">
+            <h3 class="font-display font-semibold text-graphite-900 text-lg mb-3">Does Captive Path take equity?</h3>
+            <p class="text-graphite-600 text-base leading-relaxed">Engagement structures vary depending on the opportunity and the nature of the involvement. This is discussed directly during the evaluation phase.</p>
+          </div>
+        </div>
+
+        <!-- Internal links -->
+        <div class="reveal mt-12 flex flex-col sm:flex-row gap-4">
+          <a href="/about" class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline">
+            Learn about Captive Path →
+          </a>
+          <a href="/contact" class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline">
+            Get in touch →
+          </a>
+        </div>
       </div>
     </div>
   </section>
