@@ -1,0 +1,80 @@
+---
+interface Props {
+  condensed?: boolean;
+}
+
+const { condensed = false } = Astro.props;
+
+const pillars = [
+  {
+    number: '01',
+    title: 'Evaluate the opportunity',
+    description:
+      'Pressure-test ideas, markets, wedges and viability before overcommitting.',
+  },
+  {
+    number: '02',
+    title: 'Shape the strategy',
+    description:
+      'Clarify positioning, business design, operating structure and next moves.',
+  },
+  {
+    number: '03',
+    title: 'Build the foundation',
+    description:
+      'Create products, systems, workflows or infrastructure that move the venture forward.',
+  },
+  {
+    number: '04',
+    title: 'Support what scales',
+    description:
+      'Stay involved where there is real alignment, upside and leverage.',
+  },
+];
+---
+
+<section class="py-22 md:py-30">
+  <div class="max-w-6xl mx-auto px-6 md:px-10">
+    <p class="reveal text-xs font-display font-medium tracking-widest uppercase text-teal-800 mb-4">
+      What we do
+    </p>
+
+    <h2 class="reveal font-display text-4xl md:text-5xl text-graphite-900 leading-tight font-bold mb-6">
+      Built for more than <span class="text-highlight">advice.</span>
+    </h2>
+
+    <p class="reveal text-graphite-600 text-lg leading-relaxed max-w-2xl mb-14 md:mb-18">
+      Captive Path works on opportunities that need more than outsourced labor
+      or broad consulting. The focus is on evaluating what matters, structuring
+      the right path forward and helping build the systems, product and
+      momentum behind it.
+    </p>
+
+    <div class="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-0.5 bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
+      {pillars.map((pillar) => (
+        <div class="reveal bg-stone-50 p-8 md:p-10 hover:bg-stone-100/80 transition-colors duration-300">
+          <span class="text-sm font-display font-medium text-teal-800 tracking-wider mb-3 block">
+            {pillar.number}
+          </span>
+          <h3 class="text-lg font-display font-semibold text-graphite-900 mb-3">
+            {pillar.title}
+          </h3>
+          <p class="text-graphite-500 text-base leading-relaxed">
+            {pillar.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    {condensed && (
+      <div class="reveal mt-10">
+        <a
+          href="/about"
+          class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline"
+        >
+          Learn more about what we do →
+        </a>
+      </div>
+    )}
+  </div>
+</section>
