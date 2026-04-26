@@ -44,8 +44,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       }
 
       const timestamp = Date.now();
+      const uniqueId = crypto.randomUUID().slice(0, 8);
       const sanitizedName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
-      const key = `contact-uploads/${timestamp}-${sanitizedName}`;
+      const key = `contact-uploads/${timestamp}-${uniqueId}-${sanitizedName}`;
 
       await context.env.UPLOADS.put(key, file.stream(), {
         httpMetadata: { contentType: file.type },
