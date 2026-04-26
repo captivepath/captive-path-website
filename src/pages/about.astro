@@ -70,10 +70,10 @@ const aboutSchema = JSON.stringify({
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0); background-size: 32px 32px;"></div>
 
     <div class="relative max-w-6xl mx-auto px-6 md:px-10">
-      <!-- Top row: Photo left, headline + text right -->
+      <!-- Top row: Photo + quote left, headline + text right -->
       <div class="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16 items-start mb-14 md:mb-18">
         <div class="reveal md:col-span-2">
-          <div class="photo-editorial rounded-sm overflow-hidden">
+          <div class="photo-editorial rounded-sm overflow-hidden mb-6">
             <img
               src="/images/zach-warshawsky.webp"
               alt="Zach Warshawsky, Founder of Captive Path"
@@ -83,11 +83,14 @@ const aboutSchema = JSON.stringify({
               loading="lazy"
             />
           </div>
+          <p class="text-stone-400 text-lg font-display font-medium italic">
+            "Judgment first. Capability second. Tools third."
+          </p>
         </div>
 
         <div class="md:col-span-3">
           <p class="reveal text-xs font-display font-medium tracking-widest uppercase text-teal-400 mb-4">
-            Founder
+            Zach Warshawsky <span class="text-stone-500">|</span> Founder
           </p>
           <h2 class="reveal font-display text-3xl md:text-4xl text-stone-50 leading-tight font-bold mb-8">
             Led by <span class="text-highlight-light">operator judgment.</span>
@@ -105,32 +108,19 @@ const aboutSchema = JSON.stringify({
         </div>
       </div>
 
-      <!-- Bottom row: 3 stat boxes left, quote + name right -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16 items-start">
-        <div class="reveal md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
-          <div class="bg-graphite-800 p-5 md:p-6">
-            <span class="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">20+</span>
-            <span class="text-stone-400 text-sm leading-snug">Years across technology &amp; operations</span>
-          </div>
-          <div class="bg-graphite-800 p-5 md:p-6">
-            <span class="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">Multi-domain</span>
-            <span class="text-stone-400 text-sm leading-snug">Systems, growth, venture building</span>
-          </div>
-          <div class="bg-graphite-800 p-5 md:p-6">
-            <span class="block font-display text-2xl md:text-3xl font-bold text-teal-400 mb-1">Operator-led</span>
-            <span class="text-stone-400 text-sm leading-snug">Strategy paired with real execution</span>
-          </div>
+      <!-- Bottom row: 3 stat boxes full width -->
+      <div class="reveal grid grid-cols-1 sm:grid-cols-3 gap-px bg-graphite-700 border-2 border-graphite-700 rounded-sm overflow-hidden">
+        <div class="bg-graphite-800 p-6 md:p-8">
+          <span class="block font-display text-3xl md:text-4xl font-bold text-teal-400 mb-1">20+ Years</span>
+          <span class="text-stone-400 text-sm leading-snug">Across technology and operations</span>
         </div>
-
-        <div class="reveal md:col-span-2 flex flex-col justify-center">
-          <blockquote class="border-l-2 border-teal-700 pl-5 mb-6">
-            <p class="text-stone-300 text-lg font-display font-medium italic leading-relaxed">
-              "Judgment first. Capability second. Tools third."
-            </p>
-          </blockquote>
-          <span class="text-sm text-teal-400 font-display font-medium tracking-wide">
-            Zach Warshawsky
-          </span>
+        <div class="bg-graphite-800 p-6 md:p-8">
+          <span class="block font-display text-3xl md:text-4xl font-bold text-teal-400 mb-1">Multi-domain</span>
+          <span class="text-stone-400 text-sm leading-snug">Systems, growth, venture building</span>
+        </div>
+        <div class="bg-graphite-800 p-6 md:p-8">
+          <span class="block font-display text-3xl md:text-4xl font-bold text-teal-400 mb-1">Operator-led</span>
+          <span class="text-stone-400 text-sm leading-snug">Strategy paired with real execution</span>
         </div>
       </div>
 
