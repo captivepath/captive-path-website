@@ -8,7 +8,6 @@ const SAFE_CONTENT_TYPES = new Set([
   'image/png',
   'image/gif',
   'image/webp',
-  'image/svg+xml',
   'audio/mpeg',
   'audio/wav',
   'audio/ogg',
