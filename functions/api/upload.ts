@@ -3,14 +3,27 @@ interface Env {
 }
 
 const MAX_FILE_SIZE = 500 * 1024 * 1024; // 500 MB
+const MAX_FILES_PER_REQUEST = 10;
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
+const ALLOWED_ORIGINS = [
+  'https://captivepath.com',
+  'https://www.captivepath.com',
+];
+
+function getCorsHeaders(request: Request): Record<string, string> {
+  const origin = request.headers.get('Origin') || '';
+  const isPreview = origin.endsWith('.captive-path-website.pages.dev');
+  const allowed = ALLOWED_ORIGINS.includes(origin) || isPreview;
+  return {
+    'Access-Control-Allow-Origin': allowed ? origin : ALLOWED_ORIGINS[0],
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+}
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
+  const corsHeaders = getCorsHeaders(context.request);
+
   try {
     const contentType = context.request.headers.get('Content-Type') || '';
 
@@ -27,6 +40,13 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     if (!files.length) {
       return new Response(
         JSON.stringify({ error: 'No files provided.' }),
+        { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+      );
+    }
+
+    if (files.length > MAX_FILES_PER_REQUEST) {
+      return new Response(
+        JSON.stringify({ error: `Maximum ${MAX_FILES_PER_REQUEST} files per upload.` }),
         { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
       );
     }
@@ -74,6 +94,6 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 };
 
-export const onRequestOptions: PagesFunction = async () => {
-  return new Response(null, { status: 204, headers: corsHeaders });
+export const onRequestOptions: PagesFunction = async (context) => {
+  return new Response(null, { status: 204, headers: getCorsHeaders(context.request) });
 };

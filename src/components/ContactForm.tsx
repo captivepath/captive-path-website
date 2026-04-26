@@ -45,7 +45,9 @@ export default function ContactForm({ siteKey }: { siteKey?: string }) {
   const dragCounterRef = useRef(0);
 
   useEffect(() => {
-    if (!siteKey || !turnstileRef.current) return;
+    if (!siteKey || !turnstileRef.current || status !== 'idle') return;
+
+    turnstileWidgetId.current = null;
 
     function renderWidget() {
       if (!window.turnstile || !turnstileRef.current) return;
@@ -69,7 +71,7 @@ export default function ContactForm({ siteKey }: { siteKey?: string }) {
       }, 200);
       return () => clearInterval(interval);
     }
-  }, [siteKey]);
+  }, [siteKey, status]);
 
   const addFiles = useCallback((newFiles: FileList | File[]) => {
     const toAdd: PendingFile[] = [];
