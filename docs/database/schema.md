@@ -17,7 +17,9 @@ Stores all contact form submissions.
 | `name` | TEXT | Submitter's full name |
 | `email` | TEXT | Submitter's email address |
 | `message` | TEXT | Message body |
-| `created_at` | TEXT | ISO 8601 timestamp of submission |
+| `created_at` | TEXT | ISO 8601 timestamp of submission (default: current time) |
+| `ip_address` | TEXT | Submitter's IP address (from CF-Connecting-IP header) |
+| `user_agent` | TEXT | Submitter's browser User-Agent string |
 
 ### Migration
 See `migrations/0001_create_contacts.sql`
