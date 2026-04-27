@@ -5,11 +5,13 @@ Captive Path Website is a static marketing site built with **Astro 5** + **Tailw
 
 ## Structure
 - **File-based routing**: Pages defined in `src/pages/` (Home, About, Process, Journal, Contact, Privacy, Terms)
-- **Component architecture**: Static `.astro` components for layout sections, React `.tsx` for interactive islands
+- **Component architecture**: Static `.astro` components for layout sections, React `.tsx` for interactive islands (`client:visible` for deferred hydration)
 - **Content collections**: Journal articles authored as Markdown in `src/content/journal/` with Zod schema validation
 - **Design tokens**: Defined in `src/styles/global.css` via Tailwind `@theme`
 - **Backend**: Cloudflare Pages Functions for contact form API (`functions/api/contact.ts`)
 - **Database**: Cloudflare D1 for contact form submission storage
+- **Font delivery**: Self-hosted variable woff2 fonts (Space Grotesk + Inter) in `public/fonts/`, preloaded in the HTML head, with unicode-range subsetting
+- **Prefetch**: Astro hover-based prefetching for faster page-to-page navigation
 - **CI/CD**: GitHub Actions deploying to Cloudflare Pages
 
 ## Pages
