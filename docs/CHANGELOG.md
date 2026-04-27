@@ -1,5 +1,46 @@
 # Changelog
 
+## 2026-04-27 (Session 8 — Performance Optimization)
+
+### Changed
+- **Self-hosted fonts**: Replaced Google Fonts CDN with self-hosted variable woff2 files in `public/fonts/` (Space Grotesk + Inter), eliminating ~750ms render-blocking external request chain
+- **Font preloading**: Added `<link rel="preload">` for both latin subset font files
+- **Unicode-range subsetting**: Only latin and latin-ext subsets loaded (no Vietnamese, Cyrillic, or Greek)
+- **ContactForm hydration**: Changed from `client:load` to `client:visible` (defers 187KB React bundle until form scrolls into view)
+- **Nav logo**: Added `fetchpriority="high"` and `decoding="async"`
+- **Lazy images**: Added `decoding="async"` to all lazy-loaded images (about page, WhyZach, journal listing)
+
+### Added
+- **Astro prefetch**: Enabled hover-based page prefetching for faster navigation between pages
+- Variable font files: `space-grotesk-var-latin.woff2` (22KB), `inter-var-latin.woff2` (48KB), plus latin-ext fallbacks
+- `@font-face` declarations in `global.css` with `font-display: swap`
+
+### Removed
+- Google Fonts external `<link>` tags (preconnect + stylesheet)
+- Dependency on `fonts.googleapis.com` and `fonts.gstatic.com` domains
+
+## 2026-04-26 (Session 7 — Content Expansion & Polish)
+
+### Added
+- **6 new journal articles**: selectivity-matters, what-serious-work, sequencing-work, venture-platform-vs-studio, asymmetry-is-not-a-buzzword, problem-quality
+- **OG images**: Per-article 1200×630 PNG social cards for all 6 new articles
+- **OG card design system doc**: `docs/og-card-design-system.md` — reusable template and style reference for generating OG images
+- **Journal pagination**: Multi-page journal listing (6 articles per page)
+- **Journal byline avatar**: Zach Warshawsky avatar on article pages
+
+### Changed
+- **About page founder section**: Updated layout and content
+- **Founder section layout**: Tightened spacing and proportions
+- **Homepage layout**: Spacing fixes, updated headshot
+- **Journal category filters**: Fixed filter functionality
+- **File download endpoint**: Changed to inline display for safe content types
+- Sitemap now includes 9 journal article URLs (14 URLs total)
+
+### Fixed
+- Journal category filter buttons not working correctly
+- Stray characters and `[page:]`/`[web:]` citation artifacts removed from articles
+- OG design system doc: corrected font format declaration (truetype not woff2)
+
 ## 2026-04-26 (Session 6 — Complete SEO/AEO Pass & Contact Form Enhancements)
 
 ### Added

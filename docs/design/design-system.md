@@ -14,6 +14,7 @@ Modern editorial systems design with restrained character.
 - **Display:** Space Grotesk — hero headline and selective section headings
 - **Body:** Inter — body copy, navigation, UI elements
 - **Scale:** Based on 4px grid
+- **Delivery:** Self-hosted variable woff2 fonts with `font-display: swap`, preloaded in HTML head, unicode-range subsetting (latin + latin-ext)
 
 ## Spacing
 - 4px base grid

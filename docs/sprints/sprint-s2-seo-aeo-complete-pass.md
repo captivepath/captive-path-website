@@ -3,11 +3,10 @@
 ## Overview
 Full SEO, AEO, and content overhaul across the entire captivepath.com website, plus contact form enhancements including file upload and Cloudflare Turnstile human verification.
 
-## Status: In Review (PR #16)
+## Status: Merged
 
 **Branch:** `devin/1777212883-seo-aeo-complete-pass`
 **PR:** https://github.com/captivepath/captive-path-website/pull/16
-**Preview:** https://devin-1777212883-seo-aeo-com.captive-path-website.pages.dev
 
 ---
 
