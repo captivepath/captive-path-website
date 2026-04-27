@@ -6,6 +6,9 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://captivepath.com',
+  prefetch: {
+    defaultStrategy: 'hover',
+  },
   integrations: [
     react(),
     sitemap({

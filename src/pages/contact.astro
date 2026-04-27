@@ -54,7 +54,7 @@ const contactSchema = JSON.stringify({
       <div class="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16">
         <!-- Form (React island) -->
         <div class="md:col-span-3">
-          <ContactForm client:load siteKey={turnstileSiteKey} />
+          <ContactForm client:visible siteKey={turnstileSiteKey} />
         </div>
 
         <!-- Sidebar info -->
