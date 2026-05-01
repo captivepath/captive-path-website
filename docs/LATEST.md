@@ -4,21 +4,23 @@
 **Captive Path Website** — Premium marketing site for Captive Path, an independent venture platform for what's worth building.
 
 ## Current Sprint
-**S2 — Complete SEO/AEO Implementation & Contact Form Enhancements**
+**S3 — SEO Audit Implementation**
 
-### Status: In Review (PR #16)
+### Status: Deployed to Production (PR #25 merged)
 
-### Last Session (2026-04-26)
-- **Full SEO/AEO overhaul**: robots.txt, canonical tags, unique metadata, OG images, Twitter cards, JSON-LD structured data across all 10 pages
-- **3 journal articles published**: Full prose styling with `@tailwindcss/typography`, article metadata, thumbnail cards
-- **Contact form file uploads**: Drag-and-drop zone, R2 storage, multi-file, 500 MB limit, links in email + DB
-- **Cloudflare Turnstile**: Managed-mode human verification on contact form
-- **Content additions**: Entity clarifier, FAQ sections (home + process), expanded founder bio
-- **AEO**: llms.txt for AI crawlers
-- **Security hardening**: Content-Type whitelist, attachment-only downloads, URL validation, filename sanitization
-- **Documentation**: Journal editorial system reference added to docs/
+### Last Session (2026-05-01)
+- **SEO audit implementation**: All 15 tasks (T-101 through T-209) from the SEO implementation brief completed and deployed
+- **Custom 404 page**: Proper HTTP 404 responses with `noindex` and internal links
+- **Sitemap improvements**: Git-based `<lastmod>` timestamps, `/sitemap.xml` alias, `/privacy/` and `/terms/` now indexed (17 URLs total)
+- **Trailing-slash canonicalization**: All internal links updated to canonical trailing-slash form
+- **Cross-linking**: RelatedReading component on all 9 articles, pillar interlinking between framework and supporting articles, conversion links on comparison article
+- **Structured data**: Blog JSON-LD on `/journal/`, enhanced AboutPage schema, FAQPage on comparison article
+- **Content expansion**: `/process/` expanded with two new H2 sections and richer phase descriptions (~950 words)
+- **Security headers**: HSTS, X-Frame-Options, CSP-Report-Only via `_headers` file
+- **Journal pagination**: `/journal/2/` differentiated with unique description and `rel=prev`/`rel=next`
 
 ### Previous Sessions
+- Session 7: SEO audit implementation (T-101 through T-209), security headers, content expansion, cross-linking
 - Session 6: Complete SEO/AEO pass, file uploads, Turnstile, 3 articles published
 - Session 5: Astro migration, domain setup (captivepath.com), black logo swap, white favicon, spacing fixes
 - Session 4: Highlight CSS, stat boxes, borders, copy cleanup, founder section redesign
@@ -27,19 +29,18 @@
 - Session 1: Repository created, design system, full homepage, CI/CD pipeline, Cloudflare Pages deployment
 
 ### Upcoming
-- Turnstile widget creation in Cloudflare dashboard (site key + secret key)
-- www.captivepath.com → captivepath.com 301 redirect rule (manual Cloudflare dashboard step)
+- Promote CSP from report-only to enforced after monitoring period
 - Additional journal articles per editorial system
+- www.captivepath.com redirect rule (manual Cloudflare dashboard step)
 
 ### Deployment
 - **Production:** https://captivepath.com (custom domain, SSL active)
-- **Preview:** https://devin-1777212883-seo-aeo-com.captive-path-website.pages.dev
-- **CI/CD:** GitHub Actions → Cloudflare Pages (on push to main + PR preview deploys)
-- **Status:** PR #16 in review
+- **CI/CD:** GitHub Actions: typecheck, build, deploy to Cloudflare Pages (on push to main + PR preview deploys)
 
 ### Last Updated
-2026-04-26
+2026-05-01
 
 ### Sprint Documents
+- [Sprint S3 — SEO Audit Implementation](sprints/sprint-s3-seo-audit-implementation.md)
 - [Sprint S2 — SEO/AEO & Contact Form Enhancements](sprints/sprint-s2-seo-aeo-complete-pass.md)
 - [Sprint S0 — Design System & Homepage Build](sprints/sprint-s0-design-system.md)
