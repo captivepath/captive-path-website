@@ -9,7 +9,7 @@ og_description: "A practical view of modern incubation: fewer theatrics, tighter
 og_image: "/og/journal/what-a-modern-incubation-model-actually-looks-like.png"
 og_image_width: 1200
 og_image_height: 630
-og_image_alt: "What a Modern Incubation Model Actually Looks Like — Captive Path Journal"
+og_image_alt: "What a Modern Incubation Model Actually Looks Like. Captive Path Journal"
 twitter_card: "summary_large_image"
 twitter_title: "What a Modern Incubation Model Actually Looks Like"
 twitter_description: "A practical view of modern incubation: fewer theatrics, tighter judgment, stronger systems, and deeper operational involvement where it actually matters."
@@ -103,7 +103,7 @@ One of the most common early-stage mistakes is postponing infrastructure because
 
 In reality, some infrastructure decisions become more expensive precisely because they are postponed. Positioning drifts. Decision rights become unclear. Information gets trapped in people instead of systems. Workflow debt accumulates quietly. Eventually the team is no longer choosing structure; it is inheriting chaos.
 
-Modern incubation means introducing the right amount of structure earlier — not corporate heaviness, but enough operating architecture to support consistent decision-making and cleaner execution.
+Modern incubation means introducing the right amount of structure earlier... not corporate heaviness, but enough operating architecture to support consistent decision-making and cleaner execution.
 
 ### 5. Variable Depth of Involvement
 

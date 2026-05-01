@@ -9,7 +9,7 @@ og_description: "A practical framework for identifying real asymmetry in venture
 og_image: "/og/journal/asymmetry-is-not-a-buzzword-what-it-should-mean-in-practice.png"
 og_image_width: 1200
 og_image_height: 630
-og_image_alt: "Asymmetry Is Not a Buzzword: What It Should Mean in Practice — Captive Path Journal"
+og_image_alt: "Asymmetry Is Not a Buzzword: What It Should Mean in Practice. Captive Path Journal"
 twitter_card: "summary_large_image"
 twitter_title: "Asymmetry in Practice"
 twitter_description: "A practical framework for identifying real asymmetry in venture opportunities."

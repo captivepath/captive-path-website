@@ -9,7 +9,7 @@ og_description: "What to solve first, what to delay, and how sequencing shapes v
 og_image: "/og/journal/sequencing-work-what-to-solve-first-in-a-new-venture.png"
 og_image_width: 1200
 og_image_height: 630
-og_image_alt: "Sequencing Work: What to Solve First in a New Venture — Captive Path Journal"
+og_image_alt: "Sequencing Work: What to Solve First in a New Venture. Captive Path Journal"
 twitter_card: "summary_large_image"
 twitter_title: "Sequencing Work in a New Venture"
 twitter_description: "What to solve first, what to delay, and how sequencing shapes venture outcomes."

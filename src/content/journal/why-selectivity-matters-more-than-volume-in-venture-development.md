@@ -9,7 +9,7 @@ og_description: "A serious look at why stronger selection creates better venture
 og_image: "/og/journal/why-selectivity-matters-more-than-volume-in-venture-development.png"
 og_image_width: 1200
 og_image_height: 630
-og_image_alt: "Why Selectivity Matters More Than Volume in Venture Development — Captive Path Journal"
+og_image_alt: "Why Selectivity Matters More Than Volume in Venture Development. Captive Path Journal"
 twitter_card: "summary_large_image"
 twitter_title: "Why Selectivity Matters More Than Volume"
 twitter_description: "A serious look at why stronger selection creates better venture outcomes than more throughput."
