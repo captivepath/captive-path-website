@@ -3,10 +3,11 @@
 ## Overview
 Implementation of a comprehensive SEO audit across captivepath.com, covering 15 tasks (T-101 through T-209) organized in two phases. The audit addressed HTTP semantics, sitemap improvements, internal link canonicalization, cross-linking, structured data enhancements, content expansion and security headers.
 
-## Status: Deployed to Production (PR #25 merged)
+## Status: Complete (PRs #25, #26, #27 merged)
 
-**Branch:** `devin/1777666452-seo-audit-implementation`
-**PR:** https://github.com/captivepath/captive-path-website/pull/25
+**Implementation PR:** https://github.com/captivepath/captive-path-website/pull/25 (`devin/1777666452-seo-audit-implementation`)
+**Documentation PR:** https://github.com/captivepath/captive-path-website/pull/26 (`devin/1777667565-post-seo-docs`)
+**Follow-Up Fixes PR:** https://github.com/captivepath/captive-path-website/pull/27 (`devin/1777669540-seo-followup-fixes`)
 
 ---
 
@@ -125,13 +126,37 @@ Implementation of a comprehensive SEO audit across captivepath.com, covering 15 
 
 ---
 
+## Follow-Up Fixes (PR #27)
+
+Five issues identified during post-deployment verification of PR #25:
+
+1. **Sitemap lastmod (T-102)**: CI used `fetch-depth: 1` (shallow clone) causing all `<lastmod>` values to be the build timestamp. Fixed by adding `fetch-depth: 0` to `.github/workflows/deploy.yml` checkout step.
+2. **`/journal/` rel=next trailing slash (T-207)**: `<link rel="next">` href was missing trailing slash (`/journal/2` instead of `/journal/2/`), causing a 308 redirect on crawler follow. Fixed in `src/pages/journal/[...page].astro`.
+3. **`/journal/2/` title em-dash (T-207)**: Page title contained `Captive Path Journal — Page 2`. Replaced em-dash with colon. Also fixed `og:image:alt` on journal listing.
+4. **`/process/` H2 sections verbatim (T-208)**: Body paragraphs in "What evaluation actually looks like" and "Where this process tends to break" were paraphrased. Replaced with exact verbatim text from the implementation brief.
+5. **Sitewide em-dash sweep**: Removed all visible em-dashes (U+2014) from body copy, JSON-LD text fields, `og:image:alt` attributes, and HTML comments across 17 files. Replacements used ellipses or periods. JSON-LD text updated to match visible body text. Zero em-dashes in any rendered HTML after build.
+
+### Files Modified (PR #27)
+- `.github/workflows/deploy.yml` — `fetch-depth: 0`
+- `src/layouts/Layout.astro` — HTML comment em-dash
+- `src/pages/index.astro` — FAQ JSON-LD + visible FAQ answers + `ogImageAlt`
+- `src/pages/contact.astro` — hero paragraph + `ogImageAlt`
+- `src/pages/process.astro` — verbatim H2 sections + FAQ JSON-LD + visible FAQ + `ogImageAlt`
+- `src/pages/about.astro` — `ogImageAlt`
+- `src/pages/journal/[...page].astro` — rel=next trailing slash + title colon + `ogImageAlt`
+- `src/pages/journal/[id].astro` — fallback `ogImageAlt` template
+- All 9 `src/content/journal/*.md` — `og_image_alt` frontmatter + body em-dashes (3 articles)
+
+---
+
 ## Voice and Copy Rules Applied
-- No em dashes in new copy (ellipses used where pause needed)
+- No em dashes anywhere on the site (ellipses or periods used where pause needed); enforced sitewide in PR #27
 - No comma after the word "and"
 - "Captive Path" used by name, not first-person plural
-- Existing copy outside explicit scope preserved unchanged
+- Operator copy is final: do not draft, paraphrase, or substitute (enforced for `/process/` H2 sections in PR #27)
 
-## Follow-Up Items
+## Remaining Follow-Up Items
 - Promote CSP from report-only to enforced after monitoring period with zero violations
 - Monitor `rel=prev`/`rel=next` signals in Search Console
 - Validate all JSON-LD via Schema Markup Validator after production deploy
+- Monitor sitemap `<lastmod>` diversity as individual pages are updated in future sessions

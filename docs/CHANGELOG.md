@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-05-01 (Session 7b — SEO Follow-Up Fixes)
+
+### Fixed
+- **Sitemap lastmod**: CI checkout changed from `fetch-depth: 1` to `fetch-depth: 0` in `.github/workflows/deploy.yml` so git history is available at build time; previously all 17 URLs shared an identical build-time timestamp
+- **`/journal/` rel=next**: Trailing slash added to `<link rel="next" href="...">` to avoid 308 redirect on crawler follow
+- **`/journal/2/` title**: Em-dash replaced with colon (`Captive Path Journal: Page 2 | ...`)
+- **`/process/` H2 sections**: Body paragraphs of "What evaluation actually looks like" and "Where this process tends to break" replaced with verbatim operator-approved copy from the implementation brief
+- **Sitewide em-dash sweep**: Removed every visible em-dash (U+2014) from body copy, JSON-LD text fields, `og:image:alt` attributes, and HTML comments across homepage, contact, process, about, all 9 journal articles, journal listing, and article template fallback
+
+### Changed
+- Em-dash replacements used ellipses (`...`) or periods (`. `) depending on cadence; no comma after "and" introduced; no meaning changed
+- Homepage FAQPage JSON-LD `text` fields updated to match the new visible body text (em-dash-free)
+- Process page FAQ JSON-LD `text` fields updated to match visible answers
+- All 9 article `og_image_alt` frontmatter fields changed from `— Captive Path Journal` to `. Captive Path Journal`
+
 ## 2026-05-01 (Session 7 — SEO Audit Implementation)
 
 ### Added

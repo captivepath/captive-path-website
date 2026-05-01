@@ -6,20 +6,20 @@
 ## Current Sprint
 **S3 — SEO Audit Implementation**
 
-### Status: Deployed to Production (PR #25 merged)
+### Status: Complete (PRs #25, #26, #27 merged)
 
 ### Last Session (2026-05-01)
-- **SEO audit implementation**: All 15 tasks (T-101 through T-209) from the SEO implementation brief completed and deployed
-- **Custom 404 page**: Proper HTTP 404 responses with `noindex` and internal links
-- **Sitemap improvements**: Git-based `<lastmod>` timestamps, `/sitemap.xml` alias, `/privacy/` and `/terms/` now indexed (17 URLs total)
-- **Trailing-slash canonicalization**: All internal links updated to canonical trailing-slash form
-- **Cross-linking**: RelatedReading component on all 9 articles, pillar interlinking between framework and supporting articles, conversion links on comparison article
-- **Structured data**: Blog JSON-LD on `/journal/`, enhanced AboutPage schema, FAQPage on comparison article
-- **Content expansion**: `/process/` expanded with two new H2 sections and richer phase descriptions (~950 words)
-- **Security headers**: HSTS, X-Frame-Options, CSP-Report-Only via `_headers` file
-- **Journal pagination**: `/journal/2/` differentiated with unique description and `rel=prev`/`rel=next`
+- **SEO follow-up fixes** (PR #27): 5 post-deployment corrections from verification of PR #25
+  - CI checkout `fetch-depth: 0` for correct sitemap `<lastmod>` from git history
+  - `/journal/` `rel=next` trailing slash fix
+  - `/journal/2/` title em-dash replaced with colon
+  - `/process/` two H2 sections replaced with verbatim operator copy
+  - Sitewide em-dash sweep: zero `U+2014` characters in any rendered HTML
+- **Post-deployment docs** (PR #26): CHANGELOG, LATEST, architecture docs, sprint S3 doc
+- **SEO audit implementation** (PR #25): All 15 tasks (T-101 through T-209) from the implementation brief
 
 ### Previous Sessions
+- Session 7b: SEO follow-up fixes (5 items), sitewide em-dash removal, verbatim operator copy
 - Session 7: SEO audit implementation (T-101 through T-209), security headers, content expansion, cross-linking
 - Session 6: Complete SEO/AEO pass, file uploads, Turnstile, 3 articles published
 - Session 5: Astro migration, domain setup (captivepath.com), black logo swap, white favicon, spacing fixes
@@ -35,7 +35,7 @@
 
 ### Deployment
 - **Production:** https://captivepath.com (custom domain, SSL active)
-- **CI/CD:** GitHub Actions: typecheck, build, deploy to Cloudflare Pages (on push to main + PR preview deploys)
+- **CI/CD:** GitHub Actions: typecheck, build (`fetch-depth: 0` for git-based sitemap), deploy to Cloudflare Pages (on push to main + PR preview deploys)
 
 ### Last Updated
 2026-05-01
