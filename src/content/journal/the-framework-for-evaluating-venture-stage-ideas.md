@@ -74,7 +74,7 @@ A useful problem statement has three properties:
 For example, "SMB teams struggle with analytics" is not a useful problem statement.
 "Non-technical operators in mid-market logistics companies spend hours each week assembling spreadsheets from three systems because nothing in their current stack can produce the view they actually use to make decisions" is.
 
-If a team cannot describe the problem with that level of clarity, any downstream discussion about market size, pricing, or product is premature.
+If a team cannot describe the problem with that level of clarity, any downstream discussion about market size, pricing, or product is premature. For a deeper look at what separates a real problem from a surface-level annoyance, see [problem quality as an evaluation lens](/journal/problem-quality-the-difference-between-an-annoyance-and-a-venture-grade-opportunity/).
 
 ### 2. The Context: Where Does This Sit in the Real World?
 
@@ -117,12 +117,12 @@ This lens asks:
 
 The point is not to scold teams for not having everything figured out. It is to turn vague ambition into a concrete system design, even in early form.
 
-A system that only works if everything goes right is not a system. It is a hope.
+A system that only works if everything goes right is not a system. It is a hope. For more on why [infrastructure decisions deserve the same rigor as product decisions](/journal/systems-over-hustle-why-infrastructure-decides-outcomes/), that question is explored separately.
 
 ### 5. The Asymmetry: Why This Opportunity, With These People, Now?
 
 Plenty of ideas clear the first four lenses and are still not worth doing.
-The last lens is about asymmetry: what makes this a better use of constrained time, capital, and focus than the many other things that could be built instead?
+The last lens is about [asymmetry](/journal/asymmetry-is-not-a-buzzword-what-it-should-mean-in-practice/): what makes this a better use of constrained time, capital, and focus than the many other things that could be built instead?
 
 Asymmetry can show up as:
 
@@ -168,7 +168,7 @@ Optimism is easy to produce. Constraint-awareness is harder and more useful.
 The outcome of a real evaluation session is not "green-light the whole thing" or "kill it forever."
 It is: what is the smallest next step that converts an assumption into observation?
 
-Used this way, the framework becomes less about one big yes-or-no decision and more about a structured series of decisions that sharpen or retire ideas over time.
+Used this way, the framework becomes less about one big yes-or-no decision and more about a structured series of decisions that sharpen or retire ideas over time. For the broader discipline of [sequencing work correctly in a new venture](/journal/sequencing-work-what-to-solve-first-in-a-new-venture/), that is its own practice.
 
 ## Where This Breaks
 

@@ -37,7 +37,7 @@ const {
   jsonLd,
 } = Astro.props;
 
-const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const currentPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
 const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, 'https://captivepath.com').href;
 const resolvedOgUrl = ogUrl || resolvedCanonical;
 const resolvedOgImage = ogImage || 'https://captivepath.com/og/pages/og-home.png';

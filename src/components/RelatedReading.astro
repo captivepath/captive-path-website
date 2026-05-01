@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentId: string;
+}
+
+const { currentId } = Astro.props;
+
+const relatedMap: Record<string, string[]> = {
+  'asymmetry-is-not-a-buzzword-what-it-should-mean-in-practice': [
+    'the-framework-for-evaluating-venture-stage-ideas',
+    'problem-quality-the-difference-between-an-annoyance-and-a-venture-grade-opportunity',
+    'why-selectivity-matters-more-than-volume-in-venture-development',
+  ],
+  'problem-quality-the-difference-between-an-annoyance-and-a-venture-grade-opportunity': [
+    'the-framework-for-evaluating-venture-stage-ideas',
+    'asymmetry-is-not-a-buzzword-what-it-should-mean-in-practice',
+    'sequencing-work-what-to-solve-first-in-a-new-venture',
+  ],
+  'sequencing-work-what-to-solve-first-in-a-new-venture': [
+    'the-framework-for-evaluating-venture-stage-ideas',
+    'systems-over-hustle-why-infrastructure-decides-outcomes',
+    'what-a-modern-incubation-model-actually-looks-like',
+  ],
+  'systems-over-hustle-why-infrastructure-decides-outcomes': [
+    'sequencing-work-what-to-solve-first-in-a-new-venture',
+    'what-a-modern-incubation-model-actually-looks-like',
+    'why-selectivity-matters-more-than-volume-in-venture-development',
+  ],
+  'the-framework-for-evaluating-venture-stage-ideas': [
+    'problem-quality-the-difference-between-an-annoyance-and-a-venture-grade-opportunity',
+    'asymmetry-is-not-a-buzzword-what-it-should-mean-in-practice',
+    'sequencing-work-what-to-solve-first-in-a-new-venture',
+  ],
+  'venture-platform-vs-venture-studio-what-actually-changes-operationally': [
+    'what-a-modern-incubation-model-actually-looks-like',
+    'the-framework-for-evaluating-venture-stage-ideas',
+    'why-selectivity-matters-more-than-volume-in-venture-development',
+  ],
+  'what-a-modern-incubation-model-actually-looks-like': [
+    'venture-platform-vs-venture-studio-what-actually-changes-operationally',
+    'systems-over-hustle-why-infrastructure-decides-outcomes',
+    'why-selectivity-matters-more-than-volume-in-venture-development',
+  ],
+  'what-serious-work-means-at-captive-path': [
+    'why-selectivity-matters-more-than-volume-in-venture-development',
+    'the-framework-for-evaluating-venture-stage-ideas',
+    'systems-over-hustle-why-infrastructure-decides-outcomes',
+  ],
+  'why-selectivity-matters-more-than-volume-in-venture-development': [
+    'what-serious-work-means-at-captive-path',
+    'the-framework-for-evaluating-venture-stage-ideas',
+    'what-a-modern-incubation-model-actually-looks-like',
+  ],
+};
+
+const relatedSlugs = relatedMap[currentId] || [];
+const allArticles = await getCollection('journal', ({ data }) => data.published);
+const relatedArticles = relatedSlugs
+  .map((slug) => allArticles.find((a) => a.id === slug))
+  .filter((a) => a !== undefined);
+---
+
+{relatedArticles.length > 0 && (
+  <div class="mt-14 pt-8 border-t border-stone-200">
+    <h2 class="font-display text-2xl font-semibold text-graphite-900 mb-6">Related reading</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      {relatedArticles.map((article) => (
+        <a href={`/journal/${article.id}/`} class="group block">
+          <h3 class="font-display text-base font-semibold text-graphite-900 leading-snug mb-2 group-hover:text-teal-800 transition-colors">
+            {article.data.title}
+          </h3>
+          <span class="text-sm font-medium text-teal-800 group-hover:text-teal-700 transition-colors">
+            Read the article
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+)}

@@ -27,7 +27,7 @@ One of the easiest mistakes in venture work is confusing the existence of a prob
 
 A problem can be real, visible, frustrating, and still not be worth building around. That distinction matters because many early-stage efforts begin too close to irritation and too far from structural necessity. The result is a familiar pattern: a team identifies something inefficient, annoying, or outdated, assumes that frustration implies demand, and starts building before asking whether the problem is actually strong enough to support a venture.
 
-This is where problem quality becomes decisive.
+This is where problem quality becomes decisive. It is the first lens in [the framework for evaluating venture-stage ideas](/journal/the-framework-for-evaluating-venture-stage-ideas/).
 
 Problem quality is the degree to which a problem possesses the weight, urgency, structural relevance, and economic gravity necessary to justify serious venture effort. It is not enough for something to be inconvenient. It must matter in a way that creates durable pressure for a solution.
 

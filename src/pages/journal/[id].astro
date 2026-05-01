@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedReading from '../../components/RelatedReading.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -38,6 +39,49 @@ const articleSchema = JSON.stringify({
   "image": ogImage,
   "isPartOf": { "@id": "https://captivepath.com/#website" }
 });
+
+// FAQPage schema for the comparison article (T-206)
+const comparisonSlug = 'venture-platform-vs-venture-studio-what-actually-changes-operationally';
+const faqSchema = article.id === comparisonSlug ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the operational difference between a venture platform and a venture studio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A venture studio runs a portfolio. It originates many ideas and pushes a meaningful number of them forward in parallel. A venture platform engages with a small number of opportunities at a time and goes deeper on each. Operationally that means different staffing models, different sequencing of work and different decision rights for founders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which model gives founders more control over equity and direction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A platform engagement is structured around the specific opportunity. Direction and equity are negotiated case by case rather than flowing from a portfolio model that treats every venture similarly. For founders who need real involvement without giving up the company, a platform tends to fit better."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is a venture platform a better fit than a venture studio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When the opportunity is real but the path from idea to execution is unclear and when the founder needs structured involvement from someone who has built systems and businesses before. A platform is built for that specific situation. A studio is built for portfolio scale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a venture platform replace traditional advisors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It replaces the parts of advisory work that need execution, judgment and accountability. It does not replace specialist advisors for narrow domains like tax or regulatory law. The line is whether the work needs to be done or only discussed."
+      }
+    }
+  ]
+}) : undefined;
+
+const jsonLdBlocks = [articleSchema, faqSchema].filter((s): s is string => Boolean(s));
 ---
 
 <Layout
@@ -53,12 +97,12 @@ const articleSchema = JSON.stringify({
   twitterImage={twitterImage}
   canonicalUrl={canonicalUrl}
   ogType="article"
-  jsonLd={articleSchema}
+  jsonLd={jsonLdBlocks}
 >
   <article class="pt-32 pb-20 md:pt-40 md:pb-26">
     <div class="max-w-3xl mx-auto px-6 md:px-10">
       <a
-        href="/journal"
+        href="/journal/"
         class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline mb-8 inline-block"
       >
         ← Journal
@@ -91,12 +135,14 @@ const articleSchema = JSON.stringify({
         <Content />
       </div>
 
+      <RelatedReading currentId={article.id} />
+
       <!-- Internal links -->
       <div class="mt-14 pt-8 border-t border-stone-200 flex flex-col sm:flex-row gap-4">
-        <a href="/process" class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline">
+        <a href="/process/" class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline">
           See how Captive Path evaluates ventures →
         </a>
-        <a href="/contact" class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline">
+        <a href="/contact/" class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline">
           Start a conversation →
         </a>
       </div>

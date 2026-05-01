@@ -1,9 +1,10 @@
 ---
 interface Props {
   condensed?: boolean;
+  expanded?: boolean;
 }
 
-const { condensed = false } = Astro.props;
+const { condensed = false, expanded = false } = Astro.props;
 
 const steps = [
   {
@@ -11,24 +12,32 @@ const steps = [
     title: 'Assess',
     description:
       'Understand the idea, the market, the wedge and the practical upside.',
+    expandedHtml:
+      'Understand the idea, the market, the wedge and the practical upside. Most ventures fail at this stage without realizing it. The work is honest evaluation against <a href="/journal/the-framework-for-evaluating-venture-stage-ideas/" class="text-teal-800 hover:text-teal-700 transition-colors link-underline">the lenses that actually predict outcomes</a>, not validation theater.',
   },
   {
     number: '02',
     title: 'Refine',
     description:
       'Clarify the strategy, priorities, constraints and execution path.',
+    expandedHtml:
+      'Clarify the strategy, priorities, constraints and execution path. Refinement is where most teams skip the hardest decisions. What to cut, what to defer and what to commit to early. Done well, it shortens the distance between idea and traction by months.',
   },
   {
     number: '03',
     title: 'Build',
     description:
-      'Create the product, systems, or infrastructure required to move.',
+      'Create the product, systems or infrastructure required to move.',
+    expandedHtml:
+      'Create the product, systems or infrastructure required to move. Build does not begin until clarity exists. When it does begin, <a href="/journal/systems-over-hustle-why-infrastructure-decides-outcomes/" class="text-teal-800 hover:text-teal-700 transition-colors link-underline">infrastructure decisions are treated with the same rigor as product decisions</a>, because they are.',
   },
   {
     number: '04',
     title: 'Advance',
     description:
       'Continue selectively where the opportunity and alignment are strong.',
+    expandedHtml:
+      'Continue selectively where the opportunity and alignment are strong. Not every venture should advance into deeper involvement and treating that as a default is a mistake. The decision to keep going is its own evaluation.',
   },
 ];
 ---
@@ -66,9 +75,13 @@ const steps = [
             <h3 class="text-xl font-display font-semibold text-graphite-900 mb-2">
               {step.title}
             </h3>
-            <p class="text-graphite-500 text-base leading-relaxed max-w-lg">
-              {step.description}
-            </p>
+            {expanded ? (
+              <p class="text-graphite-500 text-base leading-relaxed max-w-lg" set:html={step.expandedHtml} />
+            ) : (
+              <p class="text-graphite-500 text-base leading-relaxed max-w-lg">
+                {step.description}
+              </p>
+            )}
           </div>
         </div>
       ))}
@@ -77,7 +90,7 @@ const steps = [
     {condensed && (
       <div class="reveal mt-10">
         <a
-          href="/process"
+          href="/process/"
           class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline"
         >
           Explore the full process →

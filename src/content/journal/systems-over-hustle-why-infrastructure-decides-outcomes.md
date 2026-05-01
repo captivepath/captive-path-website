@@ -31,7 +31,7 @@ But motion is not the same thing as compounding progress.
 
 At a certain point, outcomes are not decided by how hard a team can push through disorder. They are decided by the quality of the infrastructure underneath the work.
 
-That word matters. Infrastructure does not just mean software, operations tooling, or documentation. It means the entire support structure that allows good work to repeat: decision systems, information flows, role clarity, planning rhythm, process design, and the practical architecture that keeps momentum from leaking out of the business.
+That word matters. Infrastructure does not just mean software, operations tooling, or documentation. It means the entire support structure that allows good work to repeat: decision systems, information flows, role clarity, planning rhythm, process design, and the practical architecture that keeps momentum from leaking out of the business. This is one of the five lenses in [the venture-stage evaluation framework](/journal/the-framework-for-evaluating-venture-stage-ideas/).
 
 ## Hustle Is Often a Symptom
 
