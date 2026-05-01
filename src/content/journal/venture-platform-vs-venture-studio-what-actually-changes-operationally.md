@@ -9,7 +9,7 @@ og_description: "What really changes operationally between a venture platform an
 og_image: "/og/journal/venture-platform-vs-venture-studio-what-actually-changes-operationally.png"
 og_image_width: 1200
 og_image_height: 630
-og_image_alt: "Venture Platform vs. Venture Studio: What Actually Changes Operationally — Captive Path Journal"
+og_image_alt: "Venture Platform vs. Venture Studio: What Actually Changes Operationally. Captive Path Journal"
 twitter_card: "summary_large_image"
 twitter_title: "Venture Platform vs. Venture Studio"
 twitter_description: "What really changes operationally between a venture platform and a venture studio."

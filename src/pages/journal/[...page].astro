@@ -19,7 +19,7 @@ const { page } = Astro.props;
 const categories = ['All', 'Venture Analysis', 'Venture Evaluation', 'Strategy', 'Execution and Strategy', 'Incubation', 'Venture Models', 'Captive Path Perspective'];
 const pageNum = page.currentPage;
 const pageTitle = pageNum > 1
-  ? `Captive Path Journal — Page ${pageNum} | Venture Strategy and Operator Insights`
+  ? `Captive Path Journal: Page ${pageNum} | Venture Strategy and Operator Insights`
   : 'Captive Path Journal | Venture Strategy and Operator Insights';
 const canonicalUrl = pageNum > 1
   ? `https://captivepath.com/journal/${pageNum}/`
@@ -52,7 +52,7 @@ const blogSchema = pageNum === 1 ? JSON.stringify({
   ogDescription="Read Captive Path's journal on venture evaluation, incubation models, strategy, systems, and the practical work of building ventures that matter."
   ogUrl="https://captivepath.com/journal/"
   ogImage="https://captivepath.com/og/pages/og-journal.png"
-  ogImageAlt="Captive Path Journal — Ideas, analysis, operating perspective"
+  ogImageAlt="Captive Path Journal: Ideas, analysis, operating perspective"
   twitterTitle="Captive Path Journal | Venture Strategy and Operator Insights"
   twitterDescription="Read Captive Path's journal on venture evaluation, incubation models, strategy, systems, and the practical work of building ventures that matter."
   twitterImage="https://captivepath.com/og/pages/og-journal.png"
@@ -62,7 +62,7 @@ const blogSchema = pageNum === 1 ? JSON.stringify({
     <link slot="head" rel="prev" href={pageNum === 2 ? 'https://captivepath.com/journal/' : `https://captivepath.com${page.url.prev}`} />
   )}
   {page.url.next && (
-    <link slot="head" rel="next" href={`https://captivepath.com${page.url.next}`} />
+    <link slot="head" rel="next" href={`https://captivepath.com${page.url.next}${page.url.next?.endsWith('/') ? '' : '/'}`} />
   )}
 
   <!-- Hero -->

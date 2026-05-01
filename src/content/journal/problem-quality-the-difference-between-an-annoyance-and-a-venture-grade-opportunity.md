@@ -9,7 +9,7 @@ og_description: "How to tell the difference between a mild irritation and a prob
 og_image: "/og/journal/problem-quality-the-difference-between-an-annoyance-and-a-venture-grade-opportunity.png"
 og_image_width: 1200
 og_image_height: 630
-og_image_alt: "Problem Quality: The Difference Between an Annoyance and a Venture-Grade Opportunity — Captive Path Journal"
+og_image_alt: "Problem Quality: The Difference Between an Annoyance and a Venture-Grade Opportunity. Captive Path Journal"
 twitter_card: "summary_large_image"
 twitter_title: "Problem Quality and Venture-Grade Opportunities"
 twitter_description: "How to tell the difference between a mild irritation and a problem worth building a venture around."

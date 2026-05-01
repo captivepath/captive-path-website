@@ -91,7 +91,7 @@ const jsonLdBlocks = [articleSchema, faqSchema].filter((s): s is string => Boole
   ogDescription={article.data.og_description || article.data.excerpt}
   ogUrl={canonicalUrl}
   ogImage={ogImage}
-  ogImageAlt={article.data.og_image_alt || `${article.data.title} — Captive Path Journal`}
+  ogImageAlt={article.data.og_image_alt || `${article.data.title}: Captive Path Journal`}
   twitterTitle={article.data.twitter_title || article.data.title}
   twitterDescription={article.data.twitter_description || article.data.excerpt}
   twitterImage={twitterImage}

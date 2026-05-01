@@ -9,7 +9,7 @@ og_description: "In venture building, hustle creates motion. Infrastructure crea
 og_image: "/og/journal/systems-over-hustle-why-infrastructure-decides-outcomes.png"
 og_image_width: 1200
 og_image_height: 630
-og_image_alt: "Systems Over Hustle: Why Infrastructure Decides Outcomes — Captive Path Journal"
+og_image_alt: "Systems Over Hustle: Why Infrastructure Decides Outcomes. Captive Path Journal"
 twitter_card: "summary_large_image"
 twitter_title: "Systems Over Hustle: Why Infrastructure Decides Outcomes"
 twitter_description: "In venture building, hustle creates motion. Infrastructure creates repeatability, judgment, and the conditions for compounding outcomes."
@@ -125,7 +125,7 @@ The point is not to impose process for its own sake. The point is to reduce unne
 ## The Common Objection: "Isn't This Too Early?"
 
 This is where many teams hesitate.
-They assume infrastructure belongs to a later chapter — after product-market fit, after hiring, after fundraising, after some imagined threshold where the business becomes "real enough" to justify structure.
+They assume infrastructure belongs to a later chapter... after product-market fit, after hiring, after fundraising, after some imagined threshold where the business becomes "real enough" to justify structure.
 
 But weak early infrastructure does not stay small.
 It compounds.

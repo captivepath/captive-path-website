@@ -9,7 +9,7 @@ og_description: "A statement of philosophy about judgment, structure, selectivit
 og_image: "/og/journal/what-serious-work-means-at-captive-path.png"
 og_image_width: 1200
 og_image_height: 630
-og_image_alt: "What Serious Work Means at Captive Path — Captive Path Journal"
+og_image_alt: "What Serious Work Means at Captive Path. Captive Path Journal"
 twitter_card: "summary_large_image"
 twitter_title: "What Serious Work Means at Captive Path"
 twitter_description: "A statement of philosophy about judgment, structure, selectivity, and the standard of work behind the platform."

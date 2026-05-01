@@ -9,7 +9,7 @@ og_description: "A practical framework for evaluating venture-stage ideas throug
 og_image: "/og/journal/the-framework-for-evaluating-venture-stage-ideas.png"
 og_image_width: 1200
 og_image_height: 630
-og_image_alt: "The Framework for Evaluating Venture-Stage Ideas — Captive Path Journal"
+og_image_alt: "The Framework for Evaluating Venture-Stage Ideas: Captive Path Journal"
 twitter_card: "summary_large_image"
 twitter_title: "The Framework for Evaluating Venture-Stage Ideas"
 twitter_description: "A practical framework for evaluating venture-stage ideas through problem clarity, context, mechanism, system design, and asymmetry."
@@ -30,7 +30,7 @@ Founders talk about what they want to build, why the timing feels right, and how
 
 Captive Path exists for a different reason. It exists to take ideas seriously enough to test them hard. It is built on the belief that if something is truly worth building, it should be able to withstand a level of evaluation that goes far beyond "does this sound exciting?"
 
-This piece walks through the evaluation framework used at Captive Path for venture-stage ideas. It is intentionally practical and intentionally unforgiving. It is not designed to help anyone fall more in love with their own narrative. It is designed to expose whether there is a real opportunity worth building around — or not.
+This piece walks through the evaluation framework used at Captive Path for venture-stage ideas. It is intentionally practical and intentionally unforgiving. It is not designed to help anyone fall more in love with their own narrative. It is designed to expose whether there is a real opportunity worth building around... or not.
 
 ## What Usually Goes Wrong
 
@@ -112,7 +112,7 @@ At venture stage, the most dangerous assumptions are rarely on the slide titled 
 This lens asks:
 
 - What does the first real version actually require: data access, integrations, people, capital, licenses, relationships?
-- Where are the fragile dependencies — the areas where one no or one delayed decision kills momentum?
+- Where are the fragile dependencies... the areas where one no or one delayed decision kills momentum?
 - What has to be true about the team: skills, credibility, time, and willingness to live with a specific kind of risk?
 
 The point is not to scold teams for not having everything figured out. It is to turn vague ambition into a concrete system design, even in early form.
@@ -127,7 +127,7 @@ The last lens is about [asymmetry](/journal/asymmetry-is-not-a-buzzword-what-it-
 Asymmetry can show up as:
 
 - Access: relationships, data, or insight others do not have
-- Advantage: a particular capability — technical, operational, or commercial — that is unusually strong
+- Advantage: a particular capability... technical, operational, or commercial... that is unusually strong
 - Timing: structural change in a market that makes something possible now that was not viable five years ago and will be crowded five years from now
 
 If an idea requires the team to be average at everything and exceptional at nothing, it may still end up as a fine business. It is unlikely to be the right venture for a focused platform.
@@ -190,4 +190,4 @@ Sometimes it is applied to a founder's external opportunity. Sometimes it is app
 
 In practice, that means some ideas move forward quickly with a shared sense of why. Others are paused deliberately, reshaped, or retired. That is not a failure of the idea or the founder. It is a choice to reserve serious effort for what is structurally worth building.
 
-If this resonates, the next step is simple: take one idea — even one that feels obvious — and put it through these five lenses, sentence by sentence. The results are usually clarifying.
+If this resonates, the next step is simple: take one idea... even one that feels obvious... and put it through these five lenses, sentence by sentence. The results are usually clarifying.
