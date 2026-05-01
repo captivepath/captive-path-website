@@ -43,7 +43,7 @@ The startup environment likes language that signals sophistication while remaini
 
 The problem is that this weakens the concept. If every attractive opportunity is called asymmetric, the term stops filtering anything.
 
-That matters because asymmetry, properly understood, is one of the most useful evaluation lenses in early-stage work. It helps identify whether an opportunity has unusual structural leverage or whether it merely looks appealing on the surface.
+That matters because asymmetry, properly understood, is one of the most useful evaluation lenses in early-stage work. It helps identify whether an opportunity has unusual structural leverage or whether it merely looks appealing on the surface. Asymmetry is one of the five lenses in [the venture-stage evaluation framework](/journal/the-framework-for-evaluating-venture-stage-ideas/).
 
 ## What real asymmetry can come from
 

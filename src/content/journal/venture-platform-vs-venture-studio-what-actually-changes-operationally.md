@@ -61,7 +61,7 @@ That distinction is especially important because undisciplined involvement often
 
 A studio model often implies a tighter link between venture creation and the internal resource base that supports it. The economics of the model may assume the studio captures more equity and exercises more influence because it is contributing meaningful formation-stage leverage.
 
-A platform can still participate deeply, but it does not have to frame every engagement through the same ownership logic or creation pattern. The incentive structure can remain aligned with selective depth, problem quality, and operating fit rather than forcing every opportunity into a predetermined mold.
+A platform can still participate deeply, but it does not have to frame every engagement through the same ownership logic or creation pattern. For a closer look at how this works in practice, see [how Captive Path's process is structured](/process/). The incentive structure can remain aligned with selective depth, problem quality, and operating fit rather than forcing every opportunity into a predetermined mold.
 
 This difference matters because a model becomes distorted when its economics force behavior that no longer serves the opportunity. If a team is designed to build, it may keep building even when the better decision is to stop, narrow, or reframe. A platform can protect against that if it is disciplined enough to remain selective.
 
@@ -101,4 +101,22 @@ That means:
 
 This is the deeper point. The right label is not valuable because it sounds better. It is valuable because it forces conceptual honesty. And conceptual honesty improves execution.
 
-The market does not need more firms using fashionable language loosely. It needs clearer models, cleaner distinctions, and better decisions about what kind of work is actually being done.
+The market does not need more firms using fashionable language loosely. It needs clearer models, cleaner distinctions, and better decisions about what kind of work is actually being done. If this framing resonates, [start a conversation about your venture](/contact/).
+
+## Frequently asked questions
+
+**What is the operational difference between a venture platform and a venture studio?**
+
+A venture studio runs a portfolio. It originates many ideas and pushes a meaningful number of them forward in parallel. A venture platform engages with a small number of opportunities at a time and goes deeper on each. Operationally that means different staffing models, different sequencing of work and different decision rights for founders.
+
+**Which model gives founders more control over equity and direction?**
+
+A platform engagement is structured around the specific opportunity. Direction and equity are negotiated case by case rather than flowing from a portfolio model that treats every venture similarly. For founders who need real involvement without giving up the company, a platform tends to fit better.
+
+**When is a venture platform a better fit than a venture studio?**
+
+When the opportunity is real but the path from idea to execution is unclear and when the founder needs structured involvement from someone who has built systems and businesses before. A platform is built for that specific situation. A studio is built for portfolio scale.
+
+**Does a venture platform replace traditional advisors?**
+
+It replaces the parts of advisory work that need execution, judgment and accountability. It does not replace specialist advisors for narrow domains like tax or regulatory law. The line is whether the work needs to be done or only discussed.

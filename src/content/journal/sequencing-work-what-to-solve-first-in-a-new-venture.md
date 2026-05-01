@@ -29,7 +29,7 @@ This is one of the most common structural problems in new ventures. A team sense
 
 The result is not laziness. It is mis-sequencing.
 
-In early-stage work, order matters more than many teams want to admit. The same tasks completed in a better sequence can create dramatically better outcomes, because each layer of work becomes more informed by the one before it.
+In early-stage work, order matters more than many teams want to admit. The same tasks completed in a better sequence can create dramatically better outcomes, because each layer of work becomes more informed by the one before it. Sequencing connects directly to [the framework for evaluating venture-stage ideas](/journal/the-framework-for-evaluating-venture-stage-ideas/), where the order of the five lenses is itself a sequencing decision.
 
 ## Why sequencing is such a hidden variable
 

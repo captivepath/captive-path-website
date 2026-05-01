@@ -24,11 +24,30 @@ const pageTitle = pageNum > 1
 const canonicalUrl = pageNum > 1
   ? `https://captivepath.com/journal/${pageNum}/`
   : 'https://captivepath.com/journal/';
+const pageDescription = pageNum > 1
+  ? `Page ${pageNum} of the Captive Path Journal. More essays on venture evaluation, incubation, systems and selectivity.`
+  : "Read Captive Path's journal on venture evaluation, incubation models, strategy, systems, and the practical work of building ventures that matter.";
+
+// Blog schema (page 1 only)
+const allPublished = await getCollection('journal', ({ data }) => data.published);
+const blogSchema = pageNum === 1 ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://captivepath.com/journal/#blog",
+  "name": "Captive Path Journal",
+  "url": "https://captivepath.com/journal/",
+  "publisher": { "@id": "https://captivepath.com/#organization" },
+  "blogPost": allPublished.map((a) => ({
+    "@type": "BlogPosting",
+    "@id": `https://captivepath.com/journal/${a.id}/#article`
+  }))
+}) : undefined;
 ---
 
 <Layout
   title={pageTitle}
-  description="Read Captive Path's journal on venture evaluation, incubation models, strategy, systems, and the practical work of building ventures that matter."
+  description={pageDescription}
+  jsonLd={blogSchema}
   ogTitle="Captive Path Journal | Venture Strategy and Operator Insights"
   ogDescription="Read Captive Path's journal on venture evaluation, incubation models, strategy, systems, and the practical work of building ventures that matter."
   ogUrl="https://captivepath.com/journal/"
@@ -39,6 +58,13 @@ const canonicalUrl = pageNum > 1
   twitterImage="https://captivepath.com/og/pages/og-journal.png"
   canonicalUrl={canonicalUrl}
 >
+  {page.url.prev && (
+    <link slot="head" rel="prev" href={pageNum === 2 ? 'https://captivepath.com/journal/' : `https://captivepath.com${page.url.prev}`} />
+  )}
+  {page.url.next && (
+    <link slot="head" rel="next" href={`https://captivepath.com${page.url.next}`} />
+  )}
+
   <!-- Hero -->
   <section class="pt-32 pb-16 md:pt-40 md:pb-20 section-fade-in">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
@@ -147,7 +173,7 @@ const canonicalUrl = pageNum > 1
       <!-- Internal link -->
       <div class="reveal mt-16 text-center">
         <a
-          href="/contact"
+          href="/contact/"
           class="text-sm font-medium text-teal-800 hover:text-teal-700 transition-colors link-underline"
         >
           Have something worth exploring? Start a conversation →
