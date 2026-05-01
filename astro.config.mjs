@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { statSync } from 'node:fs';
 
 /**
@@ -55,8 +55,7 @@ function getLastmod(url) {
 
   try {
     // Get the most recent commit timestamp across all files for this route.
-    const fileArgs = files.join(' ');
-    const result = execSync(`git log -1 --format=%cI -- ${fileArgs}`, {
+    const result = execFileSync('git', ['log', '-1', '--format=%cI', '--', ...files], {
       encoding: 'utf8',
       timeout: 10000,
     }).trim();
