@@ -81,7 +81,7 @@ const faqSchema = article.id === comparisonSlug ? JSON.stringify({
   ]
 }) : undefined;
 
-const jsonLdBlocks = [articleSchema, faqSchema].filter(Boolean);
+const jsonLdBlocks = [articleSchema, faqSchema].filter((s): s is string => Boolean(s));
 ---
 
 <Layout
