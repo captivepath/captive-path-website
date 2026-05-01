@@ -67,11 +67,20 @@ const relatedArticles = relatedSlugs
     <h2 class="font-display text-2xl font-semibold text-graphite-900 mb-6">Related reading</h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
       {relatedArticles.map((article) => (
-        <a href={`/journal/${article.id}/`} class="group block">
-          <h3 class="font-display text-base font-semibold text-graphite-900 leading-snug mb-2 group-hover:text-teal-800 transition-colors">
+        <a href={`/journal/${article.id}/`} class="group flex flex-col">
+          <img
+            src={article.data.og_image || `/og/journal/${article.id}.png`}
+            alt=""
+            role="presentation"
+            class="w-full aspect-[1200/630] object-cover rounded mb-3"
+            width="1200"
+            height="630"
+            loading="lazy"
+          />
+          <h3 class="font-display text-base font-semibold text-graphite-900 leading-snug mb-2 group-hover:text-teal-800 transition-colors flex-1">
             {article.data.title}
           </h3>
-          <span class="text-sm font-medium text-teal-800 group-hover:text-teal-700 transition-colors">
+          <span class="text-sm font-medium text-teal-800 group-hover:text-teal-700 transition-colors mt-auto">
             Read the article
           </span>
         </a>
