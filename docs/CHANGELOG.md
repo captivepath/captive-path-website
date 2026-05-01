@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-05-01 (Session 7 — SEO Audit Implementation)
+
+### Added
+- **Custom 404 page** (`src/pages/404.astro`): `noindex` meta, links to `/` and `/journal/`, declarative copy
+- **Sitemap `<lastmod>`**: Git-history-based timestamps for every sitemap URL via `execFileSync` in `astro.config.mjs`; filesystem mtime fallback when git history unavailable
+- **Sitemap alias**: `/sitemap.xml` 301 redirect to `/sitemap-index.xml` via `public/_redirects`
+- **RelatedReading component** (`src/components/RelatedReading.astro`): Operator-curated 3-link map rendered on all 9 article pages
+- **Pillar interlinking**: Framework article links to 4 supporting articles (asymmetry, problem-quality, sequencing, systems); each supporting article links back to framework
+- **Inline conversion links**: Comparison article links to `/process/` and `/contact/`
+- **Blog JSON-LD** on `/journal/` (page 1 only) with blogPost array referencing all published articles
+- **FAQPage JSON-LD + visible FAQ section** on comparison article with 4 operator-approved Q/A pairs
+- **`/journal/2/` differentiation**: Unique meta description, `rel="prev"` pointing to `/journal/`; `/journal/` gets `rel="next"` pointing to `/journal/2/`
+- **`/process/` content expansion**: Two new H2 sections ("What evaluation actually looks like" and "Where this process tends to break") with 5 inline article links; expanded phase descriptions via `HowItWorks` `expanded` prop
+- **Security headers** (`public/_headers`): HSTS (`max-age=63072000`), `X-Frame-Options: SAMEORIGIN`, `Content-Security-Policy-Report-Only` with inventoried third-party origins
+- **Sprint S3 documentation**: `docs/sprints/sprint-s3-seo-audit-implementation.md`
+
+### Changed
+- **Sitemap**: Now includes `/privacy/` and `/terms/` (17 URLs total); `noindex` removed from both pages
+- **Internal links**: All internal hrefs updated to canonical trailing-slash form across Nav, Footer, Hero, ClosingCTA, WhatWeDo, HowItWorks, article cards, pagination, and inline links
+- **Nav active state**: `currentPath` in Layout.astro now preserves trailing slash to match updated link hrefs
+- **About page**: `AboutPage` JSON-LD enhanced with `mainEntity` referencing Person `@id`
+- **HowItWorks component**: Added `expanded` prop for richer phase descriptions on `/process/` (homepage unchanged)
+- **astro.config.mjs**: Replaced `execSync` with `execFileSync` for shell-injection-safe sitemap lastmod resolution
+
+### Security
+- CSP in report-only mode (not enforced) covering: `challenges.cloudflare.com`, `static.cloudflareinsights.com`, `cloudflareinsights.com`, `fonts.googleapis.com`, `fonts.gstatic.com`
+- HSTS with `includeSubDomains` and `preload`
+- `X-Frame-Options: SAMEORIGIN` to prevent clickjacking
+
 ## 2026-04-26 (Session 6 — Complete SEO/AEO Pass & Contact Form Enhancements)
 
 ### Added

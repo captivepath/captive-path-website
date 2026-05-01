@@ -7,7 +7,7 @@
 - **Typography:** Space Grotesk (display) + Inter (body) via Google Fonts
 - **Motion:** CSS transitions + Intersection Observer for scroll reveal animations
 - **Content:** Astro content collections (Markdown files with Zod schema validation)
-- **Sitemap:** Auto-generated via `@astrojs/sitemap`
+- **Sitemap:** Auto-generated via `@astrojs/sitemap` with git-based `<lastmod>` timestamps and file-set scoping
 
 ## Backend
 - **Contact Form API:** Cloudflare Pages Function (`functions/api/contact.ts`)
@@ -38,13 +38,18 @@ Defined in `src/styles/global.css` via Tailwind @theme:
 ## Key Files
 | File | Purpose |
 |---|---|
-| `astro.config.mjs` | Astro configuration with React + Tailwind + Sitemap integrations |
-| `src/layouts/Layout.astro` | Master layout (head meta, nav, footer, global scripts) |
-| `src/pages/*.astro` | File-based routing (7 pages) |
+| `astro.config.mjs` | Astro configuration with React + Tailwind + Sitemap integrations; sitemap `<lastmod>` via `execFileSync` |
+| `src/layouts/Layout.astro` | Master layout (head meta, nav, footer, global scripts, JSON-LD injection) |
+| `src/pages/*.astro` | File-based routing (8 pages + 404) |
+| `src/pages/404.astro` | Custom 404 page with `noindex` and internal links |
 | `src/components/*.astro` | Static Astro components |
+| `src/components/RelatedReading.astro` | Operator-curated related articles (3-link map per article) |
+| `src/components/HowItWorks.astro` | Process phases with optional `expanded` prop for richer descriptions |
 | `src/components/ContactForm.tsx` | React island (interactive form with `client:load`) |
 | `src/content.config.ts` | Content collections schema for Journal articles |
-| `src/content/journal/*.md` | Markdown articles |
+| `src/content/journal/*.md` | Markdown articles (9 published) with inline cross-links |
 | `src/styles/global.css` | Design system tokens and animation CSS |
+| `public/_headers` | Security headers: HSTS, X-Frame-Options, CSP-Report-Only |
+| `public/_redirects` | URL redirects: `/sitemap.xml` 301 to `/sitemap-index.xml` |
 | `functions/api/contact.ts` | Cloudflare Pages Function (Postmark + D1) |
 | `wrangler.toml` | Cloudflare D1 binding and env config |
