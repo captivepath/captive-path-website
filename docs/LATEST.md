@@ -4,19 +4,16 @@
 **Captive Path Website** — Premium marketing site for Captive Path, an independent venture platform for what's worth building.
 
 ## Current Sprint
-**S3 — SEO Audit Implementation**
+**S4 — UI Polish**
 
-### Status: Complete (PRs #25, #26, #27 merged)
+### Status: Complete (PR #29 merged)
 
-### Last Session (2026-05-01)
-- **SEO follow-up fixes** (PR #27): 5 post-deployment corrections from verification of PR #25
-  - CI checkout `fetch-depth: 0` for correct sitemap `<lastmod>` from git history
-  - `/journal/` `rel=next` trailing slash fix
-  - `/journal/2/` title em-dash replaced with colon
-  - `/process/` two H2 sections replaced with verbatim operator copy
-  - Sitewide em-dash sweep: zero `U+2014` characters in any rendered HTML
-- **Post-deployment docs** (PR #26): CHANGELOG, LATEST, architecture docs, sprint S3 doc
-- **SEO audit implementation** (PR #25): All 15 tasks (T-101 through T-209) from the implementation brief
+### Last Session (2026-05-02)
+- **UI polish** (PR #29): 404 page redesign, related reading thumbnails, footer tagline, full-height hero
+  - Custom 404 page with robot illustration, single-line teal heading, full viewport height
+  - Related reading OG thumbnails with bottom-aligned links on all journal pages
+  - Footer tagline "Built with Intention in San Diego" with teal anchor icon
+  - Homepage hero vertically centered with `h-dvh`, nav overlap prevention on short viewports
 
 ### Previous Sessions
 - Session 7b: SEO follow-up fixes (5 items), sitewide em-dash removal, verbatim operator copy
@@ -38,7 +35,7 @@
 - **CI/CD:** GitHub Actions: typecheck, build (`fetch-depth: 0` for git-based sitemap), deploy to Cloudflare Pages (on push to main + PR preview deploys)
 
 ### Last Updated
-2026-05-01
+2026-05-02
 
 ### Sprint Documents
 - [Sprint S3 — SEO Audit Implementation](sprints/sprint-s3-seo-audit-implementation.md)
