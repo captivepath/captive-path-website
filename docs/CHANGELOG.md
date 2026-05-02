@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-05-02 (Session 8 — UI Polish: 404, Hero, Footer, Related Reading)
+
+### Added
+- **Custom 404 illustration**: Robot character image (`public/images/captive-path-404-robot.png`) displayed as a decorative element above the 404 heading
+- **Related reading thumbnails**: OG images displayed above article titles in the RelatedReading component on all journal pages; flex column layout aligns "Read the article" links at a consistent bottom position across cards
+- **Footer tagline**: "Built with Intention in San Diego" with teal anchor icon added to the footer bottom bar; responsive three-line centered layout on mobile, three-column spread on desktop
+- **Footer pipe separator**: Privacy Policy and Terms of Service links separated by a pipe character for clarity
+
+### Changed
+- **404 page redesign**: "404 Page not found." displayed as a single large heading on one line (using `whitespace-nowrap` on sm+) with "404" in teal `text-highlight` treatment; full viewport height (`h-dvh`) with vertically positioned content; copy updated to "This page clearly lost its path..."
+- **Homepage hero**: Changed from `min-h-[92vh]` with `items-start` to `h-dvh` with `items-center` for true vertical centering; added `pt-24 md:pt-28` to prevent content from overlapping the fixed nav on short viewports; bottom gradient fade and next section pushed below the fold on all screen sizes
+
 ## 2026-05-01 (Session 7b — SEO Follow-Up Fixes)
 
 ### Fixed
