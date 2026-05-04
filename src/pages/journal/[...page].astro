@@ -84,21 +84,43 @@ const blogSchema = pageNum === 1 ? JSON.stringify({
   <!-- Article Cards -->
   <section class="pt-10 md:pt-14 pb-22 md:pb-30">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
-      <!-- Category filters -->
-      <div class="reveal flex flex-wrap gap-3 mb-12 md:mb-16" id="journal-filters">
-        {categories.map((cat) => (
-          <button
-            data-category={cat}
-            class:list={[
-              'journal-filter px-4 py-2 text-sm font-medium rounded-sm transition-colors duration-200 cursor-pointer',
-              cat === 'All'
-                ? 'bg-graphite-900 text-stone-50'
-                : 'bg-stone-100 text-graphite-600 hover:bg-stone-200',
-            ]}
-          >
-            {cat}
-          </button>
-        ))}
+      <!-- Collapsible category filters -->
+      <div class="reveal mb-12 md:mb-16" id="journal-filters">
+        <button
+          id="filter-toggle"
+          type="button"
+          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-graphite-600 bg-stone-100 hover:bg-stone-200 rounded-sm transition-colors duration-200 cursor-pointer"
+          aria-expanded="false"
+          aria-controls="filter-panel"
+        >
+          <svg class="w-4 h-4 transition-transform duration-200" id="filter-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+          </svg>
+          <span id="filter-label">Filter</span>
+        </button>
+        <div
+          id="filter-panel"
+          class="grid transition-[grid-template-rows] duration-300 ease-in-out"
+          style="grid-template-rows: 0fr;"
+        >
+          <div class="overflow-hidden">
+            <div class="flex flex-wrap gap-3 pt-4">
+              {categories.map((cat) => (
+                <button
+                  data-category={cat}
+                  class:list={[
+                    'journal-filter px-4 py-2 text-sm font-medium rounded-sm transition-colors duration-200 cursor-pointer',
+                    cat === 'All'
+                      ? 'bg-graphite-900 text-stone-50'
+                      : 'bg-stone-100 text-graphite-600 hover:bg-stone-200',
+                  ]}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Article cards with thumbnails -->
@@ -184,12 +206,30 @@ const blogSchema = pageNum === 1 ? JSON.stringify({
 
   <script>
     function initFilters() {
+      const toggle = document.getElementById('filter-toggle');
+      const panel = document.getElementById('filter-panel') as HTMLElement | null;
+      const chevron = document.getElementById('filter-chevron') as HTMLElement | null;
+      const label = document.getElementById('filter-label');
       const buttons = document.querySelectorAll<HTMLButtonElement>('.journal-filter');
       const cards = document.querySelectorAll<HTMLElement>('.journal-card');
+      let activeFilter = 'All';
+
+      if (toggle && panel && chevron && label) {
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          panel.style.gridTemplateRows = expanded ? '0fr' : '1fr';
+          chevron.style.transform = expanded ? '' : 'rotate(180deg)';
+          label.textContent = expanded
+            ? (activeFilter === 'All' ? 'Filter' : activeFilter)
+            : (activeFilter === 'All' ? 'Filter' : activeFilter);
+        });
+      }
 
       buttons.forEach((btn) => {
         btn.addEventListener('click', () => {
           const selected = btn.dataset.category || 'All';
+          activeFilter = selected;
 
           buttons.forEach((b) => {
             if (b.dataset.category === selected) {
@@ -210,6 +250,10 @@ const blogSchema = pageNum === 1 ? JSON.stringify({
               card.style.display = 'none';
             }
           });
+
+          if (label) {
+            label.textContent = selected === 'All' ? 'Filter' : selected;
+          }
         });
       });
     }
