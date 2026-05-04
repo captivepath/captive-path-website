@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-05-04 (Session 9 — Journal Filter Collapse)
+
+### Changed
+- **Journal filter collapse**: Replaced the always-visible row of 8 category filter buttons on `/journal/` with a collapsible "Filter" toggle; filters are hidden by default and expand on click via CSS `grid-template-rows` animation
+- **Filter toggle label**: Button text updates to show the active category name when a filter other than "All" is selected
+- **Accessibility**: Toggle button includes `aria-expanded`, `aria-controls`, and a rotating chevron SVG indicator
+
 ## 2026-05-02 (Session 8 — UI Polish: 404, Hero, Footer, Related Reading)
 
 ### Added
